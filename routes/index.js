@@ -13,13 +13,13 @@ exports.random = function(req, res){
 
 //Data sets start
 exports.datasets = function(req, res){
-    res.render('index', { title: 'Datasets' });
+    res.render('list_view', { title: 'Datasets' });
 
 
 };
 exports.datasetSingle = function(req, res){
     var dataset = req.params.dataset;
-    res.render('index', { title: 'Single Dataset :' +dataset });
+    res.render('content_view', { title: 'Single Dataset :' +dataset });
 };
 
 //Datasets end
@@ -27,27 +27,31 @@ exports.datasetSingle = function(req, res){
 
 //Projects start
 exports.project = function(req, res){
-    res.render('index', { title: 'Projects' });
+    res.render('list_view', { title: 'Projects' });
 
 
 };
 exports.projectSingle = function(req, res){
     var project = req.params.project;
-    res.render('index', { title: 'Single Projects : '+project });
+    res.render('content_view', { title: 'Single Projects : '+project });
 };
 
 //projects end
 
 //problem start
 exports.problem = function(req, res){
-    res.render('index', { title: 'Problems' });
+    res.render('list_view', { title: 'Problems' });
 
 
 };
 exports.problemSingle = function(req, res){
     var problem = req.params.problem;
-    res.render('index', { title: 'Single Problems :'+problem });
+    res.render('content_view', { title: 'Single Problems :'+problem });
 };
 //problem end
 
+exports.search = function(req, res){
+    var keyword = req.params.search;
+    res.render('search_view', {title: 'Search Results for '+keyword });
+}
 

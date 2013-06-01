@@ -1,10 +1,13 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-</head>
-<body>
-        Hey its a {{title}}
-</body>
-</html>
+
+
+{{>header}}
+
+
+	<section id="body">
+
+	Homepage content
+
+	</section>
+
+
+{{>footer}}
