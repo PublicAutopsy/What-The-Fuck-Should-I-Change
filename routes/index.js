@@ -15,10 +15,6 @@ exports.list = function(req, res){
   res.render('index', { title: 'List' });
 };
 
-exports.content = function(req, res){
-  res.render('index', { title: 'Content' });
-};
-
 exports.user = function(req, res){
   res.render('index', { title: 'User' });
 };
