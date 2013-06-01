@@ -1,7 +1,16 @@
-
 /*
  * GET home page.
  */
+
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'api',
+    password : 'meowmix',
+    database: 'api_repo'
+});
+
+connection.connect();
 
 exports.index = function(req, res){
   res.render('index', { title: 'Index' });
@@ -13,13 +22,16 @@ exports.random = function(req, res){
 
 //Data sets start
 exports.datasets = function(req, res){
+    var jsonObj = [];
+    connection.query('SELECT * FROM users', function(err, rows, fields) {
+        console.log('The solution is: ', rows[0].username);
+    });
+    //res.send
     res.render('index', { title: 'Datasets' });
-
-
 };
 exports.datasetSingle = function(req, res){
     var dataset = req.params.dataset;
-    res.render('index', { title: 'Single Dataset :' +dataset });
+    res.render('index', { title: 'Single Dataset :' + dataset });
 };
 
 //Datasets end
