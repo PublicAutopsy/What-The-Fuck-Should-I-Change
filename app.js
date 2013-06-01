@@ -22,25 +22,33 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+// routes/index.js
 app.get('/', routes.index);
 app.get('/random', routes.random);
 
 app.get('/data', routes.datasets);
 app.get('/data/:dataset', routes.datasetSingle);
+app.get('/data/add', routes.datasetsAdd);
 
 app.get('/projects', routes.project );
+app.get('/projects/add', routes.projectAdd );
 app.get('/projects/:project', routes.projectSingle);
 
 app.get('/problems', routes.problem);
+app.get('/problems/add', routes.problemAdd);
 app.get('/problems/:problem', routes.problemSingle);
 
+app.get('/search/:keyword', routes.search);
+
+
+// routes/user.js
 app.get('/user/signup', user.signup);
 app.get('/user/login', user.login);
 app.get('/user/:username', user.user);
 
-app.get('/search/:keyword', routes.search);
 
+
+// routes/api.js
 app.get('/api/projects', api.projects);
 app.get('/api/problems', api.problems);
 app.get('/api/datasets', api.datasets);
