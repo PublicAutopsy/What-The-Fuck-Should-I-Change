@@ -26,16 +26,14 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/random', routes.random);
 
-app.get('/list', routes.list);
+app.get('/datasets', routes.datasets);
+app.get('/dataset/:dataset', routes.datasetSingle);
 
-app.get('/list/datasets', routes.datasets);
-app.get('/list/dataset/:dataset', routes.datasets.single);
+app.get('/projects', routes.project );
+app.get('/projects/:project', routes.projectSingle);
 
-app.get('/list/projects', routes.project );
-app.get('/list/projects/:project', routes.project.single);
-
-app.get('/list/problems', routes.problem);
-app.get('/list/problems/:problem', routes.problem.single);
+app.get('/problems', routes.problem);
+app.get('/problems/:problem', routes.problemSingle);
 
 app.get('/user/signup', user.signup);
 app.get('/user/login', user.login);
