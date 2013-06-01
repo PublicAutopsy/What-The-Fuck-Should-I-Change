@@ -1,4 +1,12 @@
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'api',
+    password : 'meowmix',
+    database: 'api_repo'
+});
 
+connection.connect();
 
 exports.index = function(req, res){
   res.render('index', { title: 'Index' });
@@ -12,6 +20,12 @@ exports.random = function(req, res){
 
 //Data sets start
 exports.datasets = function(req, res){
+
+   
+    var jsonObj = [];
+    connection.query('SELECT * FROM users', function(err, rows, fields) {
+        console.log('The solution is: ', rows[0].username);
+    });
     res.render('list_view', { title: 'Datasets' });
 };
 exports.datasetsAdd = function(req, res){
