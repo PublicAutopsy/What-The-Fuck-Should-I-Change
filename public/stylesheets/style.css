@@ -4,3 +4,17 @@ body {
 
 a {
   color: #00B7FF; }
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 60px; }
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  right: 0;
+  bottom: 0; }
