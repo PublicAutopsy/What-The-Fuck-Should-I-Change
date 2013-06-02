@@ -28,7 +28,7 @@ exports.datasets = function(req, res){
     ],
     // optional callback
     function(err, results){
-        res.send(results[0]);
+        res.render('list_view', results[0]);
     });
 };
 
@@ -46,7 +46,7 @@ exports.datasetSingle = function(req, res){
     ],
     // optional callback
     function(err, results){
-        res.send(results[0]);
+        res.render('content_view', results[0]);
     });
 };
 //Datasets end
@@ -61,7 +61,7 @@ exports.project = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.send(results[0]);
+            res.render('list_view', results[0]);
         });
 };
 
@@ -78,7 +78,7 @@ exports.projectSingle = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.send(results[0]);
+            res.render('content_project_view', results[0]);
         });
 };
 //projects end
