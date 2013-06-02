@@ -1,5 +1,6 @@
 var mysql      = require('mysql'),
     async      = require('async');
+
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'api',
@@ -15,7 +16,7 @@ exports.datasets = function(req, res){
 
     async.series([
         function(callback){
-            getDataSet(callback);
+            getDataSet(callback, undefined, true);
         }
     ],
         // optional callback
@@ -32,7 +33,7 @@ exports.datasetSingle = function(req, res){
     var dataset = req.params.dataset;
     async.series([
         function(callback){
-            getDataSet(callback, dataset);
+            getDataSet(callback, dataset, true);
         }
     ],
         // optional callback
@@ -106,7 +107,7 @@ exports.problemSingle = function (req, res) {
 };
 //problem end
 
-function getDataSet( callback, id )
+function getDataSet( callback, id, forDV )
 {
     var query = 'SELECT datasets.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, projects.project_id, projects.name AS project_name, projects.description AS project_description, problems.problem_id, problems.name AS problem_name, problems.description AS problem_description FROM datasets LEFT JOIN users ON datasets.contributer_id = users.user_id LEFT JOIN creators ON datasets.creator_id = creators.creator_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON datasets_to_api_types.api_type_id = datasets_to_api_types.api_type_id LEFT JOIN projects_to_datasets ON projects_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN projects ON projects.project_id = projects_to_datasets.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN problems ON problems.problem_id = problems_to_datasets.problem_id';
     if( id !== undefined ) query += ' WHERE datasets.dataset_id = '+ id;
@@ -116,7 +117,7 @@ function getDataSet( callback, id )
 
         var holderObj = {};
 
-        if( rows === undefined ) return new Array();
+        if( rows === undefined ) return holderObj;
         for( var x = 0; x < rows.length; x++ )
         {
             if( holderObj[rows[x].dataset_id] == null )
@@ -152,6 +153,34 @@ function getDataSet( callback, id )
             holderObj[key].api_types = removeKeys(holderObj[key].api_types);
             holderObj[key].projects = removeKeys(holderObj[key].projects);
             holderObj[key].problems = removeKeys(holderObj[key].problems);
+        }
+
+        if( forDV )
+        {
+            var keyless = removeKeys(holderObj);
+            var dvObj = {'name': 'datasets', 'size':5000, 'classname':'start', 'children':[]};
+
+            for(var key in holderObj) {
+
+                console.log(holderObj[key]);
+                var problemChild = {"name":"problems", "children":[]};
+                for(var problemKey = 0; problemKey < holderObj[key].problems.length; problemKey++)
+                {
+                    problemChild.children.push( {"name": holderObj[key].problems[problemKey].name, "size": ((holderObj[key].problems[problemKey].votes + 1) * 1000), "classname":"problem"} );
+                }
+                var projectChild = {"name":"projects", "children":[]};
+                for(var projectKey = 0; projectKey <  holderObj[key].projects.length; projectKey)
+                {
+                    projectChild.children.push( {"name": holderObj[key].projects[projectKey].name, "size": ((holderObj[key].projects[projectKey].votes + 1) * 1000), "classname":"project"} );
+                }
+
+                var parent = {"name": holderObj[key].name, "size": 5000, "classname":"dataset", "children": []};
+                parent.children.push(problemChild);
+                parent.children.push(projectChild);
+                dvObj.children.push(parent);
+            }
+
+            callback( null, dvObj);
         }
 
         callback( null, removeKeys(holderObj));
@@ -340,6 +369,8 @@ exports.problemAdd = function (req, res) {
 };
 
 exports.datasetsAdd = function (req, res) {
+    req.params = {"contributer":"asdf","creator":"sadf","description":"asdfasdfsa","location":"asfadf","name":"asdf","url":"asdfasdfs","api_types":[{"api_type_id":"1"}],"problems":[{"problem_id":0},{"problem_id":0},{"problem_id":0}]};
+
     var dataset = req.params;
     var dataset_id;
     var creator_id;
@@ -469,7 +500,7 @@ exports.projectAdd = function (req, res) {
 
                 if( rows.length < 1 )
                 {
-                    connection.query("INSERT INTO creators (name) VALUE ('" + project.creator + "')", function(err, result) {
+                    connection.query("INSERT INTO creators (name) VALUE ('" + dataset.creator + "')", function(err, result) {
                         if( err ) console.log("error: " + err);
 
                         creator_id = result.insertId;
@@ -523,3 +554,12 @@ exports.projectAdd = function (req, res) {
             res.send(results);
         });
 };
+
+function removeKeys( pObj )
+{
+    var tempArr = new Array();
+    for(var key in pObj) {
+        tempArr.push(pObj[key]);
+    }
+    return tempArr;
+}
