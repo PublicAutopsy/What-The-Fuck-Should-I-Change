@@ -13,16 +13,16 @@
             <div id="logo_container"><a href=""><img id="logo" alt="Logo" src="/images/logo.png" /></a></div>
 
             <div id="menu_container">
-                <a id="data" href="/data">
+                <a id="data" {{#data}}class="selected"{{/data}} href="/data">
                     <span class="icon"></span>
                 </a>
-                <a id="projects" href="/projects">
+                <a {{#projects}}class="selected"{{/projects}} id="projects" href="/projects">
                     <span class="icon"></span>
                 </a>
-                <a id="problems" href="/problems">
+                <a {{#problems}}class="selected"{{/problems}} id="problems" href="/problems">
                     <span class="icon"></span>
                 </a>
-                <a id="search" href="#">
+                <a  id="search" href="#">
                     <span class="icon"></span>
                 </a>
             </div>
