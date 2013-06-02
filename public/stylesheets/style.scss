@@ -55,7 +55,7 @@ a {
         #logo{
           width:26px;
           height:87px;
-          margin:20px auto;
+          margin: 15px auto 20px auto;
           display: block;
         }
       }
@@ -251,12 +251,19 @@ a {
 	.close_btn{
 		position:absolute;
 		left:-31px;
-    top:0;
+    top:19px;
     z-index:1000;
       width: 30px;
       height: 42px;
       background: rgba(255, 255, 255, 0.9);
       display: block;
+      border: 1px solid #e5e5e5;
+      .chevron{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url("/images/btn_sidenav_openclose.png") -49px center no-repeat;
+      }
 
 	}
   .filter_box{
@@ -297,6 +304,7 @@ a {
   .description{
     font-size: 14px;
     color:#484848;
+    padding-right: 60px;
   }
   .userData{
     margin-top: 20px;
@@ -319,9 +327,20 @@ a {
     width:100%;
     height:100%;
     color: #fff;
+    position: relative;
+    .clickThrough{
+      position: absolute;
+      bottom:0px;
+      left:50%;
+      margin-left: -84px;
+      display: block;
+      z-index: 9000;
+    }
 
     &#first{
-      background: url("/images/rand/4.jpg");
+      background: url("/images/rand/4.jpg") center center no-repeat;
+      background-size: cover;
+
       .splash{
         position:relative;
         z-index: 1;
@@ -334,20 +353,22 @@ a {
         text-shadow: 1px 2px 4px #777;
         filter: dropshadow(color=#555, offx=1, offy=2);
         #name{
-          font-size: 210px;
+          font-size: 180px;
 
         }
       }
     }
     &#second{
-      background: url("/images/rand/1.jpg");
+      background: url("/images/rand/1.jpg") center center no-repeat;
+      background-size: cover;
     }
     &#third{
-      background: #f1f1f1;
+      background: url("/images/rand/2.jpg") center center no-repeat;
+      background-size: cover;
       min-height: 840px;
       .content{
         width: 740px;
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 20px;
       }
       .module{
@@ -369,11 +390,8 @@ a {
     }
     .title{
       padding-top:20px ;
-      font-style: italic;
       font-weight: 100;
       font-size: 36px;
-      text-shadow: 1px 2px 4px #777;
-      filter: dropshadow(color=#555, offx=1, offy=2);
     }
     .content{
       font-size: 14px;
@@ -413,7 +431,7 @@ a {
     input{
       width: 100%;
       height:80px;
-      padding-left: 60px;
+      padding-left: 80px;
       background: transparent;
       border: 0px;
       font-style: italic;
@@ -425,7 +443,7 @@ a {
     label{
       display: block;
       margin-top: 20px;
-      padding-left: 60px;
+      padding-left: 80px;
       font-size: 12px;
       font-weight: 500;
 
@@ -516,7 +534,24 @@ a {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    color:#000;
+    color:#fff;
+  }
+}
+
+.header{
+  width: 120px;
+  height:120px;
+  background-position: right center;
+  margin: auto;
+  margin-bottom: 20px;
+  &.data{
+    background: url("/images/data-large.png") right center no-repeat;
+  }
+  &.project{
+    background: url("/images/project-large.png") right center no-repeat;
+  }
+  &.problem{
+    background: url("/images/problem-large.png") right center no-repeat;
   }
 }
 
@@ -526,4 +561,12 @@ a {
 
 .visualization{
   position:fixed;
+}
+
+#randOutput{
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 300;
+  padding-left: 20px;
+  padding-top: 100px;
 }

@@ -1,5 +1,4 @@
 <div id="info_window">
-    <div class="filter_box">Filter By</div>
     {{#dataList}}
         <div class="dataItem">
             <div class="title"><a href="/data/{{dataset_id}}">{{name}}</a></div>
@@ -85,7 +84,7 @@
         </div>
 
     {{/projectList}}
-		<a href='#' class="close_btn">close</a>
+		<a href='#' class="close_btn"> <span class="chevron"></span>  </a>
 
 
 	</div>

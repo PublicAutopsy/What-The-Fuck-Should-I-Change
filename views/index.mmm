@@ -16,6 +16,7 @@
                 </div>
             </div>
             <div class="content"></div>
+            <img id="toAbout" class="clickThrough" src="/images/circle_1.png" alt=""/>
         </div>
         <div id="second" class="page">
             <div class="title">
@@ -32,14 +33,16 @@
                 <p class="dplus">Find meaning with Data+</p>
 
             </div>
+            <img id="toContribute" class="clickThrough" src="/images/circle_2.png" alt=""/>
         </div>
         <div id="third" class="page">
             <div class="content">
-                <div class="module"></div>
-                <div class="module"></div>
-                <div class="module"></div>
-                <div class="module bottom"></div>
-                <div class="module"></div>
+                <div class="module"><img src="/images/card_1.png" alt=""/></div>
+                <div class="module"><img src="/images/card_2.png" alt=""/></div>
+                <div class="module"><img src="/images/card_3.png" alt=""/></div>
+                <div class="module"><img src="/images/card_4.png" alt=""/></div>
+                <div class="module"><img src="/images/card_5.png" alt=""/></div>
+                <div class="module"><img src="/images/card_6.png" alt=""/></div>
             </div>
 
         </div>

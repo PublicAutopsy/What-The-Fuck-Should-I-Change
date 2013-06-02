@@ -3,16 +3,19 @@
  $("#data_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_data").fadeIn();
+     return false;
  });
 
   $("#project_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_project").fadeIn();
+      return false;
  });
 
    $("#problem_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_problem").fadeIn();
+       return false;
  });
 
 
@@ -100,7 +103,7 @@ $("#project_submit_btn").click(function(){
         data: formData,
         success: function()
         {
-            window.location = "/problems/"
+            window.location = "/projects/"
         }
     })
 
@@ -115,13 +118,13 @@ $("#problem_submit_btn").click(function(){
 	formData["location"]=$("#problem_form #location").val();
 	formData["name"]=$("#problem_form #name").val();
 	formData["url"]=$("#problem_form #projectUrl").val();
-	formData["datasets"]= new Array();
-	$("#problem_form #problems ul li").each(function(i,target){
+	formData["datasets"]=[];
+	$("#problem_form #datasets ul li").each(function(i,target){
 		var item = Object();
 		item["dataset_id"]=$(target).attr("id");
 		formData["datasets"].push(item);
-	});
 
+	});
     $.ajax({
         type: "POST",
         url: "/api/problems/add",
@@ -131,6 +134,8 @@ $("#problem_submit_btn").click(function(){
             window.location = "/problems/"
         }
     })
+
+
 });
 
 var dataObj;

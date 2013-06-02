@@ -11,7 +11,7 @@
         </div>
 
         <div id="search_close">
-            <img src="/images/btn_search_close.png" alt=""/>
+            <img style="width:43px;" src="/images/btn_search_close.png" alt=""/>
         </div>
     </div>
 
