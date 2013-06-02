@@ -303,3 +303,6 @@ a {
       padding-left: 60px;
       font-size: 12px;
       font-weight: 500; }
+
+#add_data, #add_project, #add_problem {
+  display: none; }

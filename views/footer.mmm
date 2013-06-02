@@ -4,7 +4,6 @@
 	</section>
 
 
-
     <div id="search_box">
         <div id="input">
             <input id="search_field" name="search" placeholder="Type Your Search" type="text"/>
@@ -17,7 +16,10 @@
     </div>
 
     </div>
+    	 
         <script type="text/javascript" src="/javascripts/scripts.js"></script>
+        <script src="/js/form-controller.js"></script>
+
 </body>
 
 

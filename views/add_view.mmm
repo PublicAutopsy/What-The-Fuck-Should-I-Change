@@ -34,7 +34,7 @@
                 <option value="0">XML</option>
                 <option value="1">JSON</option>
                 <option value="2">CSV</option>
-                <option value="3">Document</option>
+                <option value="4">Document</option>
             </select>
 
 
@@ -47,7 +47,7 @@
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
-                <option value="3">Option 4</option>
+                <option value="4">Option 4</option>
             </select>
 
             <a id="project_submit_btn" >Submit </a>
@@ -86,7 +86,7 @@
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
-                <option value="3">Option 4</option>
+                <option value="4">Option 4</option>
             </select>
 
             <div class="form_list" id="problems">
@@ -98,7 +98,7 @@
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
-                <option value="3">Option 4</option>
+                <option value="4">Option 4</option>
             </select>
   
             <a id="project_submit_btn" >Submit </a>
@@ -135,28 +135,9 @@
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
-                <option value="3">Option 4</option>
+                <option value="4">Option 4</option>
             </select>
 
-           
-            <div class="form_list" id="problems">
-                <div class="title">Related Problems</div>
-                <ul></ul>
-            </div>
-
-            <select id="problems" value="Select A Problem">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 4</option>
-            </select>
-
-
-           
-           
-
-           
-          
             <a id="project_submit_btn" >Submit </a>
         </form>
         </div>
