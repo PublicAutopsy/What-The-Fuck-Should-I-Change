@@ -1,5 +1,5 @@
 <div id="info_window">
-    <div class="filter_box">Filter By</div>
+    <div class="filter_box"></div>
     {{#dataList}}
         <div class="dataItem">
             <div class="title"><a href="/data/{{dataset_id}}">{{name}}</a></div>

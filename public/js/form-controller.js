@@ -3,16 +3,19 @@
  $("#data_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_data").fadeIn();
+     return false;
  });
 
   $("#project_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_project").fadeIn();
+      return false;
  });
 
    $("#problem_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_problem").fadeIn();
+       return false;
  });
 
 

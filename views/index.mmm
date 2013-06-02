@@ -35,12 +35,12 @@
         </div>
         <div id="third" class="page">
             <div class="content">
-                <div class="module"></div>
-                <div class="module"></div>
-                <div class="module"></div>
-                <div class="module"></div>
-                <div class="module"></div>
-                <div class="module"></div>
+                <div class="module"><img src="/images/card_1.png" alt=""/></div>
+                <div class="module"><img src="/images/card_2.png" alt=""/></div>
+                <div class="module"><img src="/images/card_3.png" alt=""/></div>
+                <div class="module"><img src="/images/card_4.png" alt=""/></div>
+                <div class="module"><img src="/images/card_5.png" alt=""/></div>
+                <div class="module"><img src="/images/card_6.png" alt=""/></div>
             </div>
 
         </div>

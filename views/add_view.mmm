@@ -17,6 +17,10 @@
         <div id="add_data">
         <form action="POST" class="add_form" id="data_form">
 
+            <div class="header data"></div>
+
+            <hr> <br>
+
              <input id="name" type="text" placeholder="Title"/>
 
             <input id="contributor" type="text" placeholder="Your Name"/>
@@ -54,6 +58,10 @@
 
          <div id="add_project">
         <form action="POST" class="add_form" id="project_form">
+
+            <div class="header project"></div>
+
+            <hr> <br>
   
           
             <input id="name" type="text" placeholder="Title"/>
@@ -99,6 +107,10 @@
 
          <div id="add_problem">
         <form action="POST" class="add_form" id="problem_form">
+
+            <div class="header problem"></div>
+
+            <hr> <br>
            
             <input id="name" type="text" placeholder="Title"/>
 

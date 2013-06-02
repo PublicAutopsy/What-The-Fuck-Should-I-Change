@@ -242,7 +242,8 @@ a {
     height: 100%;
     color: #fff; }
     #content .page#first {
-      background: url("/images/rand/4.jpg"); }
+      background: url("/images/rand/4.jpg") center center no-repeat;
+      background-size: cover; }
       #content .page#first .splash {
         position: relative;
         z-index: 1;
@@ -257,13 +258,15 @@ a {
         #content .page#first .splash #name {
           font-size: 180px; }
     #content .page#second {
-      background: url("/images/rand/1.jpg"); }
+      background: url("/images/rand/1.jpg") center center no-repeat;
+      background-size: cover; }
     #content .page#third {
-      background: #f1f1f1;
+      background: url("/images/rand/2.jpg") center center no-repeat;
+      background-size: cover;
       min-height: 840px; }
       #content .page#third .content {
         width: 740px;
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 20px; }
       #content .page#third .module {
         width: 235px;
@@ -393,7 +396,20 @@ a {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    color: #000; }
+    color: #fff; }
+
+.header {
+  width: 120px;
+  height: 120px;
+  background-position: right center;
+  margin: auto;
+  margin-bottom: 20px; }
+  .header.data {
+    background: url("/images/data-large.png") right center no-repeat; }
+  .header.project {
+    background: url("/images/project-large.png") right center no-repeat; }
+  .header.problem {
+    background: url("/images/problem-large.png") right center no-repeat; }
 
 #add_data, #add_project, #add_problem {
   display: none; }
