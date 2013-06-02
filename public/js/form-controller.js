@@ -65,3 +65,32 @@ $("#data_submit_btn").click(function(){
 	$.post('/api/data/add', formData);
 });
 
+$("#project_submit_btn").click(function(){
+	var formData = {};
+	formData["contributer_id"]=$("#project_form #contributor").val();
+	formData["creator"]=$("#project_form #creator").val();
+	formData["description"]=$("#project_form #description").val();
+	formData["iframe_url"]=$("#project_form #projectUrl").val();
+	formData["location"]=$("#project_form #location").val();
+	formData["name"]=$("#project_form #name").val();
+	formData["repository_url"]=$("#project_form #repositoryUrl").val();
+	formData["url"]=$("#project_form #informationUrl").val();
+	formData["datasets"]= new Array();
+	$("#project_form #problems ul li").each(function(i,target){
+		var item = Object();
+		item["dataset_id"]=$(target).attr("id");
+		formData["datasets"].push(item);
+	});
+	formData["problems"]= new Array();
+	$("#project_form #problems ul li").each(function(i,target){
+		var item = Object();
+		item["problem_id"]=$(target).attr("id");
+		formData["problems"].push(item);
+	});
+
+	//console.log(formData);
+	//console.log(JSON.stringify(formData));
+
+	$.post('/api/projects/add', formData);
+});
+
