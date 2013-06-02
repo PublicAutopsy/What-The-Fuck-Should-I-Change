@@ -33,7 +33,7 @@ exports.datasets = function(req, res){
 };
 
 exports.datasetsAdd = function (req, res) {
-    var dsQuery = 'INSERT INTO datasets ()';
+    //var dsQuery = 'INSERT INTO datasets ()';
     res.render('add_view', { title: 'Add a Dataset', data : true });
 };
 
