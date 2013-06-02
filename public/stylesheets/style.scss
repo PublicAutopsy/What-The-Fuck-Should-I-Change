@@ -1,13 +1,156 @@
 html, body{
   padding: 0px;
   margin: 0px;
+  *{
+    box-sizing: border-box;
+  }
 }
 
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-height: 550px;
 }
 
 a {
   color: #00B7FF;
+}
+
+#header {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	width:60px;
+    -webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .4);
+    box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .4);
+    z-index: 50;
+    #header_wrapper{
+      width:100%;
+      height:100%;
+      position: relative;
+      min-height: 520px;
+      #logo_container{
+        width:100%;
+        height:110px;
+        border-top: 4px solid #555;
+        #logo{
+          width:26px;
+          height:87px;
+          margin:5px auto;
+          display: block;
+        }
+      }
+      #menu_container{
+        width: 100%;
+        height: 320px;
+        position:absolute;
+        top:50%;
+        margin-top: -160px;
+        z-index: 20;
+        a{
+          display: block;
+          width:100%;
+          height:80px;
+          background:#f0f0f0;
+          border-bottom:1px solid #f7f7f7;
+          border-top:1px solid #cdcdcd;
+          &:last-child{
+            border-bottom:1px solid #cdcdcd;
+          }
+          .icon{
+            display: block;
+            height:50px;
+            margin-top: 15px;
+          }
+
+          &#search .icon{
+            background: url("/images/btn_search.png") right center no-repeat;
+            width: 31px;
+            margin-left: 14px;
+            &:hover{
+              background: url("/images/btn_search.png") left center no-repeat;
+            }
+          }
+          &#search:hover, .selected{
+            .icon{
+              background: url("/images/btn_search.png") left center no-repeat;
+            }
+          }
+
+          &#data .icon{
+            background: url("/images/btn_data.png") right center no-repeat;
+            width: 23px;
+            margin-left: 18px;
+          }
+          &#data:hover, .selected{
+            .icon{
+              background: url("/images/btn_data.png") left center no-repeat;
+            }
+          }
+
+          &#problems .icon{
+            background: url("/images/btn_problems.png") right center no-repeat;
+            width: 30px;
+            margin-left: 15px;
+          }
+          &#problems:hover, .selected{
+            .icon{
+              background: url("/images/btn_problems.png") left center no-repeat;
+              margin-left: 14px;
+            }
+          }
+
+          &#projects .icon{
+            background: url("/images/btn_projects.png") right center no-repeat;
+            width: 27px;
+            margin-left: 16px;
+          }
+          &#projects:hover, .selected{
+            .icon{
+              background: url("/images/btn_projects.png") left center no-repeat;
+            }
+          }
+        }
+      }
+      #rollovers{
+        width: 100%;
+        height: 320px;
+        position:absolute;
+        top:50%;
+        margin-top: -160px;
+        z-index: 10;
+        .rollover{
+          position: relative;
+          display: block;
+          width:130px;
+          height:80px;
+          left: -70px;
+          color:#fff;
+          text-align: center;
+          padding-top: 30px;
+          z-index: 1;
+          &#search_rollover{
+            background: #f4b400;
+          }
+          &#data_rollover{
+            background: #4285f4;
+          }
+          &#problems_rollover{
+            background: #db4437;
+          }
+          &#projects_rollover{
+            background: #0f9d58;
+          }
+        }
+      }
+    }
+
+}
+#content{
+	position:absolute;
+	top:0;
+	left:60px;
+	right:0;
+	bottom:0;
 }
