@@ -228,7 +228,8 @@ a {
       text-decoration: none; }
   #info_window .description {
     font-size: 14px;
-    color: #484848; }
+    color: #484848;
+    padding-right: 60px; }
   #info_window .userData {
     margin-top: 20px;
     min-height: 50px; }
