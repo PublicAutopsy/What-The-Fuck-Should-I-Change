@@ -69,10 +69,6 @@ exports.projects = function (req, res) {
         });
 };
 
-exports.projectAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Projects', project : true });
-};
-
 exports.projectSingle = function (req, res) {
     var project = req.params.project;
     async.series([
@@ -99,10 +95,6 @@ exports.problems = function (req, res) {
         function(err, results){
             res.send(results[0]);
         });
-};
-
-exports.problemAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Problem', problem : true });
 };
 
 exports.problemSingle = function (req, res) {
@@ -374,10 +366,7 @@ exports.problemAdd = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.writeHead(302, {
-                'Location': '/problems/'
-            });
-            res.end();
+            res.send(200, 'hello world');
         });
 };
 
@@ -425,6 +414,11 @@ exports.datasetsAdd = function (req, res) {
             })
         },
         function(callback){
+            if( dataset.problems === undefined)
+            {
+                callback(null, null);
+                return;
+            }
             var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
             for(var i = 0; i < dataset.problems.length; i++ )
             {
@@ -548,12 +542,9 @@ exports.projectAdd = function (req, res) {
         }
 
     ],
-        function(err, results){
-            res.writeHead(302, {
-                'Location': '/projects/'
-                //add other headers here...
-            });
-        });
+    function(err, results){
+        res.send(200, 'hello world');
+    });
 };
 
 function removeKeys( pObj )
