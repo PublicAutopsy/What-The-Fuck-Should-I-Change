@@ -7,39 +7,32 @@
                 Data+ Terms of Service
             </div>
             <div class="content">
-                <br>
-                <strong>General Terms of Use</strong> <br>
-                Welcome to the DataPlus.io website (“Site” or “Service”), which is operated by Data+. By accessing or using this Site, you signify that you have read, understand and agree to be bound by these Terms of Use (“Terms of Use” or “Agreement”), whether or not you are a registered member of the Service. We reserve the right, at any time, to add to, change, update, or modify these Terms of Use, simply by posting such change, update, or modification on the Site and without any other notice to you. Any such change, update, or modification will be effective immediately upon posting on the Site. It is your responsibility to review these Terms of Use from time to time to ensure that you continue to agree with all of its terms.
-                <br>
-                PLEASE READ THESE TERMS OF SERVICE CAREFULLY AS THEY CONTAIN IMPORTANT INFORMATION REGARDING YOUR LEGAL RIGHTS, REMEDIES AND OBLIGATIONS.
-
-                <br><br><strong>Eligibility</strong><br>
-                Membership in the Service is void where prohibited. This Site is intended solely for users who are thirteen (13) years of age or older, and users of the Site under eighteen (18) who are currently in high school or college. Any registration by, use of or access to the Site by anyone under 13, or by anyone who is under 18 and not in high school or college, is unauthorized, unlicensed and in violation of these Terms of Use. By accessing or using the Site, you represent and warrant that you are 13 or older and in high school or college, or else that you are 18 or older, and that you agree to and to abide by all of the terms and conditions of this Agreement.
-
-                <br><br><strong>Registration Data</strong><br>
-                If you create or add to a Data+ profile, you agree to (a) provide accurate, and current information when submitting people and company data and media files to the service; (b) maintain the security of your password and identification if you have one; (c) be fully responsible for all use of your account and for any actions that take place using your account.
-
-                Any contributions to Data+ are subject to the terms set out in the Licensing Policy.
-
-                <br><br><strong>User Contract</strong><br>
-                Data+ is a directory service that benefits from registered users and staff submitting people and company data and media files. This information may be inaccurate or out-of-date and users may make mistakes when submitting the information. Data+ assumes no responsibility regarding the accuracy of the information that is provided by Data+ and use of such information is at your own risk.
-
-                Data+ shall not be responsible for any failure to remove, or delay in removing, harmful, inaccurate, unlawful, or otherwise objectionable content within the Data+ Content originating with or otherwise provided by third parties.
-
-                Data and media files are continually amended and updated in the Service by multiple contributors to keep the service up-to-date. Data+ has no responsibility or liability for the deletion or failure to store or display any content that is contributed to the Content, Site, or Service.
-                The Data+ Content offered via the Data+ API may be changed, updated, or deleted without notice for any reason at Data+’s sole discretion.
-                Republishing
-                You may copy, modify and redistribute Content in accordance with the guidelines posted on the Site or Service provided that you comply with the licenses that are presented with such Content. See our Licensing Policy for more information.
-                API Use
-                We provide access to portions of the Site and Service through an API thereby enabling people to build applications on top of the Data+ platform. For purposes of this Terms of Service, any use of the API constitutes use of the Site and Service. You agree only to use the API as outlined in the documentation provided by us on the Site.
-                On any Web page or Application where you display Data+ company or people results, each page must include a hypertext link to the appropriate company or person profile Web page on DataPlus.io. Additional Data+ Branding Requirements can be found on the following Web page: http://info.DataPlus.io/info-licensing-policy. Data+ may grant exceptions on a case-by-case basis. Contact us at licensing@DataPlus.io for special branding requests, which must be approved in advance in writing.
-                Data+ will utilize commercially reasonable efforts to provide the Data+ API on a 24/7 basis but it shall not be responsible for any disruption, regardless of length. Furthermore, Data+ shall not be liable for losses or damages you may incur due to any errors or omissions in any Data+ Content, or due to your inability to access data due to disruption of the Data+ API.
-                Data+ reserves the right to continually review and evaluate all uses of the API, including those that appear more competitive than complementary in nature.
-                Data+ provides a specific licensing contract for services that charge for the use of their data. Contact licensing@DataPlus.io
-                Data+ reserves the right in its sole discretion (for any reason or for no reason) and at anytime without notice to You to change, suspend or discontinue the Data+ API and/or suspend or terminate your rights under these General Terms of Service to access, use and/or display the Data+ API, Brand Features and any Data+ content.
-                User Conduct
-                You represent, warrant and agree that no materials of any kind submitted through a Data+ entry or otherwise posted, transmitted, or shared by you on or through the Site will violate or infringe upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary rights; or contain libelous, defamatory or otherwise unlawful material.
-                In addition, you agree not to:
+                <h5>Data+ Terms of Service</h5>
+                <h6>General Terms of Use</h6>
+                <p>Welcome to the DataPlus.io website (“Site” or “Service”), which is operated by Data+. By accessing or using this Site, you signify that you have read, understand and agree to be bound by these Terms of Use (“Terms of Use” or “Agreement”), whether or not you are a registered member of the Service. We reserve the right, at any time, to add to, change, update, or modify these Terms of Use, simply by posting such change, update, or modification on the Site and without any other notice to you. Any such change, update, or modification will be effective immediately upon posting on the Site. It is your responsibility to review these Terms of Use from time to time to ensure that you continue to agree with all of its terms.</p>
+                <p><strong>PLEASE READ THESE TERMS OF SERVICE CAREFULLY AS THEY CONTAIN IMPORTANT INFORMATION REGARDING YOUR LEGAL RIGHTS, REMEDIES AND OBLIGATIONS.</strong></p>
+                <h6>Eligibility</h6>
+                <p>Membership in the Service is void where prohibited. This Site is intended solely for users who are thirteen (13) years of age or older, and users of the Site under eighteen (18) who are currently in high school or college. Any registration by, use of or access to the Site by anyone under 13, or by anyone who is under 18 and not in high school or college, is unauthorized, unlicensed and in violation of these Terms of Use. By accessing or using the Site, you represent and warrant that you are 13 or older and in high school or college, or else that you are 18 or older, and that you agree to and to abide by all of the terms and conditions of this Agreement.</p>
+                <h6>Registration Data</h6>
+                <p>If you create or add to a Data+ profile, you agree to (a) provide accurate, and current information when submitting people and company data and media files to the service; (b) maintain the security of your password and identification if you have one; (c) be fully responsible for all use of your account and for any actions that take place using your account.</p>
+                <p>Any contributions to Data+ are subject to the terms set out in the Licensing Policy.</p>
+                <h6>User Content</h6>
+                <p>Data+ is a directory service that benefits from registered users and staff submitting people and company data and media files. This information may be inaccurate or out-of-date and users may make mistakes when submitting the information. Data+ assumes no responsibility regarding the accuracy of the information that is provided by Data+ and use of such information is at your own risk.</p>
+                <p>Data+ shall not be responsible for any failure to remove, or delay in removing, harmful, inaccurate, unlawful, or otherwise objectionable content within the Data+ Content originating with or otherwise provided by third parties.</p>
+                <p>Data and media files are continually amended and updated in the Service by multiple contributors to keep the service up-to-date. Data+ has no responsibility or liability for the deletion or failure to store or display any content that is contributed to the Content, Site, or Service.</p>
+                <p>The Data+ Content offered via the Data+ API may be changed, updated, or deleted without notice for any reason at Data+’s sole discretion.</p>
+                <h6>Republishing</h6>
+                <p>You may copy, modify and redistribute Content in accordance with the guidelines posted on the Site or Service provided that you comply with the licenses that are presented with such Content. See our Licensing Policy for more information.</p>
+                <h6>API Use</h6>
+                <p>We provide access to portions of the Site and Service through an API thereby enabling people to build applications on top of the Data+ platform. For purposes of this Terms of Service, any use of the API constitutes use of the Site and Service. You agree only to use the API as outlined in the documentation provided by us on the Site.</p>
+                <p>On any Web page or Application where you display Data+ company or people results, each page must include a hypertext link to the appropriate company or person profile Web page on DataPlus.io. Additional Data+ Branding Requirements can be found on the following Web page: http://info.DataPlus.io/info-licensing-policy. Data+ may grant exceptions on a case-by-case basis. Contact us at licensing@DataPlus.io for special branding requests, which must be approved in advance in writing.</p>
+                <p>Data+ will utilize commercially reasonable efforts to provide the Data+ API on a 24/7 basis but it shall not be responsible for any disruption, regardless of length. Furthermore, Data+ shall not be liable for losses or damages you may incur due to any errors or omissions in any Data+ Content, or due to your inability to access data due to disruption of the Data+ API.</p>
+                <p>Data+ reserves the right to continually review and evaluate all uses of the API, including those that appear more competitive than complementary in nature.</p>
+                <p>Data+ provides a specific licensing contract for services that charge for the use of their data. Contact licensing@DataPlus.io</p>
+                <p>Data+ reserves the right in its sole discretion (for any reason or for no reason) and at anytime without notice to You to change, suspend or discontinue the Data+ API and/or suspend or terminate your rights under these General Terms of Service to access, use and/or display the Data+ API, Brand Features and any Data+ content.</p>
+                <h6>User Conduct</h6>
+                <p>You represent, warrant and agree that no materials of any kind submitted through a Data+ entry or otherwise posted, transmitted, or shared by you on or through the Site will violate or infringe upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary rights; or contain libelous, defamatory or otherwise unlawful material.</p>
+                <p>In addition, you agree not to:</p>
                 harvest or collect email addresses or other contact information of other users from the Site by electronic or other means for the purposes of sending unsolicited emails or other unsolicited communications;
                 use the Site in any unlawful manner or in any other manner that could damage, disable, overburden or impair the Site;
                 upload, post, transmit, share, store or otherwise make available any content that we deem to be harmful, threatening, unlawful, defamatory, infringing, abusive, inflammatory, harassing, vulgar, obscene, fraudulent, invasive of privacy or publicity rights, hateful, or racially, ethnically or otherwise objectionable;
@@ -53,45 +46,102 @@
                 use or attempt to use another’s account, service or system without authorization from Data+, or create a false identity on the Site.
                 upload, post, transmit, share, store or otherwise make available content that, in our sole judgment, is objectionable or which restricts or inhibits any other person from using or enjoying the Site, or which may expose Data+ or its users to any harm or liability of any type.
                 post anything that exploits children or minors or that depicts cruelty to animals.
-                Copyright Infringement
-                Data+ has in place certain legally mandated procedures regarding allegations of copyright infringement occurring on the Site. We have adopted a policy that provides for the immediate suspension and/or termination of any Site user who is found to have infringed on the rights of Data+ or of a third party, or otherwise violated any intellectual property laws or regulations. Our policy is to investigate any allegations of copyright infringement brought to our attention. If you have evidence, know, or have a good faith belief that your rights or the rights of a third party have been violated and you want Data+ to delete, edit, or disable the material in question, you must provide Data+ with all of the following information: (a) a physical or electronic signature of a person authorized to act on behalf of the owner of the exclusive right that is allegedly infringed; (b) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works are covered by a single notification, a representative list of such works; (c) identification of the material that is claimed to be infringed or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material; (d) information reasonably sufficient to permit us to contact you, such as an address, telephone number, and if available, an electronic mail address at which you may be contacted; (e) a statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and (f) a statement that the information in the notification is accurate, and under penalty of perjury, that you are authorized to act on behalf of the owner of an exclusive right that is allegedly infringed. For this notification to be effective, you must provide it to Data+’s designated agent at:
-                Gené McPherson
-                Data+
-                410 Townsend St, Ste 100
-                San Francisco California 94107
-                USA
-                info@DataPlus.io
-                Links to Third Party Sites
-                The Site contains (or you may be sent through the Site) links to other web sites (“Third Party Sites”) as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software and other content or items belonging to or originating from third parties (the “Third Party Site Content”). We do not control or monitor such Third Party Sites or Third Party Site Content, and we are not responsible for any Third Party Sites or Third Party Site Content accessed through the Site. Inclusion of, linking to or permitting the use or installation of any Third Party Site or any Third Party Site Content does not imply approval or endorsement thereof by us. If you decide to leave the Site and access the Third Party Sites, you do so at your own risk and you should be aware that our terms and policies no longer govern.
-                Proprietary Rights
-                Data+, its licensors, and its content providers (including users who contribute to the site) own all right, title and interest in and to the Content created on this Site and Service. This Site and Service are protected by copyright, trademark, and other laws of both the United States and foreign countries. Except as expressly permitted in the Terms of Service, you may not reproduce, modify or prepare derivative works based on, distribute, sell, transfer, publicly display, publicly perform, transmit, or otherwise use this Site or the Service, or any portion thereof.
-                Relationship of the parties
-                You and Data+ are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales relationship, or employment relationship between us. You will have no authority to make or accept any offers or representations on our behalf.
-                Termination
-                Data+ may terminate your membership, delete your Data+ entry and any content or information that you have posted on the Site and/or prohibit you from using or accessing the Site for any reason, or no reason, at any time in its sole discretion, with or without notice.
-                Privacy Policy
-                Company respects your privacy. A complete statement of Company’s current privacy policy can be found at: http://info.DataPlus.io/info-privacy-policy. Data+’s privacy policy is expressly incorporated into this Agreement by this reference.
-                Disclaimer
-                Data+ HEREBY DISCLAIMS ALL WARRANTIES. Data+ IS MAKING THE SITE AVAILABLE “AS IS” WITHOUT WARRANTY OF ANY KIND. YOU ASSUME THE RISK OF ANY AND ALL DAMAGE OR LOSS FROM USE OF, OR INABILITY TO USE, THE SITE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED, REGARDING THE SITE, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. Data+ DOES NOT WARRANT THAT THE SITE WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE SITE WILL BE UNINTERRUPTED OR ERROR-FREE.
-                Limitation on Liability
-                Data+’S LIABILITY TO YOU IS LIMITED. TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL Data+ OR ITS DIRECTORS, EMPLOYEES OR AGENTS BE LIABLE TO YOU FOR DAMAGES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, LOST PROFITS, OR LOST DATA, REGARDLESS OF THE FORESEEABILITY OF THOSE DAMAGES) ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SITE OR ANY OTHER MATERIALS OR SERVICES PROVIDED TO YOU BY Data+. This limitation shall apply regardless of whether the damages arise out of breach of contract, tort, or any other legal theory or form of action.
-                Indemnity
-                You agree to indemnify, defend, and hold harmless Data+, its affiliates, officers, directors, employees, consultants, agents, and representatives from any and all third party claims, losses, liability, damages, and/or costs (including reasonable attorney fees and costs) arising from your access to or use of the Site, your violation of these Terms of Use, or your infringement, or infringement by any other user of your account, of any intellectual property or other right of any person or entity. We will notify you promptly of any such claim, loss, liability, or demand, and will provide you with reasonable assistance, at your expense, in defending any such claim, loss, liability, damage, or cost.
-                Governing Law
-                These Terms of Use shall be construed in accordance with and governed by the laws of the United States and the State of California, without reference to their rules regarding conflicts of law. You hereby irrevocably consent to the exclusive jurisdiction of the state or federal courts in San Mateo County, California, USA in all disputes arising out of or related to the use of the Site.
-                Severability; Waiver
-                If, for whatever reason, a court of competent jurisdiction finds any term or condition in this Agreement to be unenforceable, all other terms and conditions will remain unaffected and in full force and effect. No waiver of any breach of any provision of this Agreement shall constitute a waiver of any prior, concurrent, or subsequent breach of the same or any other provisions hereof, and no waiver shall be effective unless made in writing and signed by an authorized representative of the waiving party.
-                Change of Control
-                In the event of a change of control of Data+ or the sale of substantially all of Data+’s assets, all rights of Data+ hereunder shall be transferable without notice to you.
-                Entire Agreement
-                These Terms of Use constitute the entire agreement between you and Data+ regarding the use of the Site, superseding any prior agreements between you and Data+ relating to your use of the Site.
-                Contact us by email:
-                info@DataPlus.io
-                Trademarks
-                The Data+ mark and other Data+ graphics, logos, designs, page headers, button icons, scripts and service names are registered trademarks, trademarks or trade dress of Company in the U.S. and/or other countries.
-                Copyright.
-                Except for User Content or Third Party Site Content, all contents of the Site are: Copyright © 2013 Data+, 410 Townsend St, Ste 100, San Francisco CA 94107. All rights reserved.
-                <br><br><br><br><br>
+                <h6>Copyright Infringement</h6>
+                <p>Data+ has in place certain legally mandated procedures regarding allegations of copyright infringement occurring on the Site. We have adopted a policy that provides for the immediate suspension and/or termination of any Site user who is found to have infringed on the rights of Data+ or of a third party, or otherwise violated any intellectual property laws or regulations. Our policy is to investigate any allegations of copyright infringement brought to our attention. If you have evidence, know, or have a good faith belief that your rights or the rights of a third party have been violated and you want Data+ to delete, edit, or disable the material in question, you must provide Data+ with all of the following information: (a) a physical or electronic signature of a person authorized to act on behalf of the owner of the exclusive right that is allegedly infringed; (b) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works are covered by a single notification, a representative list of such works; (c) identification of the material that is claimed to be infringed or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material; (d) information reasonably sufficient to permit us to contact you, such as an address, telephone number, and if available, an electronic mail address at which you may be contacted; (e) a statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and (f) a statement that the information in the notification is accurate, and under penalty of perjury, that you are authorized to act on behalf of the owner of an exclusive right that is allegedly infringed. For this notification to be effective, you must provide it to Data+’s designated agent at:</p>
+                <p>Data+</p>
+                <p>81 Langton St, Ste 10</p>
+                <p>San Francisco California 94103</p>
+                <p>USA</p>
+                <p>info@DataPlus.io</p>
+                <h6>Links to Third Party Sites</h6>
+                <p>The Site contains (or you may be sent through the Site) links to other web sites (“Third Party Sites”) as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software and other content or items belonging to or originating from third parties (the “Third Party Site Content”). We do not control or monitor such Third Party Sites or Third Party Site Content, and we are not responsible for any Third Party Sites or Third Party Site Content accessed through the Site. Inclusion of, linking to or permitting the use or installation of any Third Party Site or any Third Party Site Content does not imply approval or endorsement thereof by us. If you decide to leave the Site and access the Third Party Sites, you do so at your own risk and you should be aware that our terms and policies no longer govern.</p>
+                <h6>Proprietary Rights</h6>
+                <p>Data+, its licensors, and its content providers (including users who contribute to the site) own all right, title and interest in and to the Content created on this Site and Service. This Site and Service are protected by copyright, trademark, and other laws of both the United States and foreign countries. Except as expressly permitted in the Terms of Service, you may not reproduce, modify or prepare derivative works based on, distribute, sell, transfer, publicly display, publicly perform, transmit, or otherwise use this Site or the Service, or any portion thereof.</p>
+                <h6>Relationship of the parties</h6>
+                <p>You and Data+ are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales relationship, or employment relationship between us. You will have no authority to make or accept any offers or representations on our behalf.</p>
+                <h6>Termination</h6>
+                <p>Data+ may terminate your membership, delete your Data+ entry and any content or information that you have posted on the Site and/or prohibit you from using or accessing the Site for any reason, or no reason, at any time in its sole discretion, with or without notice.</p>
+                <h6>Privacy Policy</h6>
+                <p>Company respects your privacy. A complete statement of Company’s current privacy policy can be found at: http://info.DataPlus.io/info-privacy-policy. Data+’s privacy policy is expressly incorporated into this Agreement by this reference.</p>
+                <h6>Disclaimer</h6>
+                <p>Data+ HEREBY DISCLAIMS ALL WARRANTIES. Data+ IS MAKING THE SITE AVAILABLE “AS IS” WITHOUT WARRANTY OF ANY KIND. YOU ASSUME THE RISK OF ANY AND ALL DAMAGE OR LOSS FROM USE OF, OR INABILITY TO USE, THE SITE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED, REGARDING THE SITE, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. Data+ DOES NOT WARRANT THAT THE SITE WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE SITE WILL BE UNINTERRUPTED OR ERROR-FREE.</p>
+                <h6>Limitation on Liability</h6>
+                <p>Data+’S LIABILITY TO YOU IS LIMITED. TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL Data+ OR ITS DIRECTORS, EMPLOYEES OR AGENTS BE LIABLE TO YOU FOR DAMAGES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, LOST PROFITS, OR LOST DATA, REGARDLESS OF THE FORESEEABILITY OF THOSE DAMAGES) ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SITE OR ANY OTHER MATERIALS OR SERVICES PROVIDED TO YOU BY Data+. This limitation shall apply regardless of whether the damages arise out of breach of contract, tort, or any other legal theory or form of action.</p>
+                <h6>Indemnity</h6>
+                <p>You agree to indemnify, defend, and hold harmless Data+, its affiliates, officers, directors, employees, consultants, agents, and representatives from any and all third party claims, losses, liability, damages, and/or costs (including reasonable attorney fees and costs) arising from your access to or use of the Site, your violation of these Terms of Use, or your infringement, or infringement by any other user of your account, of any intellectual property or other right of any person or entity. We will notify you promptly of any such claim, loss, liability, or demand, and will provide you with reasonable assistance, at your expense, in defending any such claim, loss, liability, damage, or cost.</p>
+                <h6>Governing Law</h6>
+                <p>These Terms of Use shall be construed in accordance with and governed by the laws of the United States and the State of California, without reference to their rules regarding conflicts of law. You hereby irrevocably consent to the exclusive jurisdiction of the state or federal courts in San Mateo County, California, USA in all disputes arising out of or related to the use of the Site.</p>
+                <h6>Severability; Waiver</h6>
+                <p>If, for whatever reason, a court of competent jurisdiction finds any term or condition in this Agreement to be unenforceable, all other terms and conditions will remain unaffected and in full force and effect. No waiver of any breach of any provision of this Agreement shall constitute a waiver of any prior, concurrent, or subsequent breach of the same or any other provisions hereof, and no waiver shall be effective unless made in writing and signed by an authorized representative of the waiving party.</p>
+                <h6>Change of Control</h6>
+                <p>In the event of a change of control of Data+ or the sale of substantially all of Data+’s assets, all rights of Data+ hereunder shall be transferable without notice to you.</p>
+                <h6>Entire Agreement</h6>
+                <p>These Terms of Use constitute the entire agreement between you and Data+ regarding the use of the Site, superseding any prior agreements between you and Data+ relating to your use of the Site.</p>
+                <h6>Contact us by email:</h6>
+                <p>info@DataPlus.io</p>
+                <h6>Trademarks</h6>
+                <p>The Data+ mark and other Data+ graphics, logos, designs, page headers, button icons, scripts and service names are registered trademarks, trademarks or trade dress of Company in the U.S. and/or other countries.</p>
+                <h6>Copyright.</h6>
+                <p>Except for User Content or Third Party Site Content, all contents of the Site are: Copyright © 2013 Data+, 81 Langton St, Ste 10, San Francisco CA 94103. All rights reserved.</p>
+
+
+<h5>Data+ Privacy Policy</h5>
+                <p>(“Data+”, “we” or “us”) created this privacy policy to give you confidence as you visit and use the DataPlus.io website (the “Site”), and to demonstrate our commitment to fair information practices and the protection of privacy. We reserve the right, at any time, to add to, change, update, or modify this privacy policy, simply by posting such change, update, or modification on the Site and without any other notice to you. Any such change, update, or modification will be effective immediately upon posting on the Site. It is your responsibility to review this privacy policy from time to time to ensure that you continue to agree with all of its terms.</p>
+                <h6>How and Why We Collect and Use Information</h6>
+                <p>Our servers automatically recognize visitors’ domain names and IP addresses (the number assigned to computers on the Internet). No personal information about you is revealed in this process. The Site may also gather anonymous “traffic data” that does not personally identify you, but that may be helpful for marketing purposes or for improving the services we offer. We may use anonymous information to analyze Site traffic, but we do not examine this information for individually identifying information. In addition, we may use anonymous IP addresses to help diagnose problems with our server, to administer the Site, or to display the content according to your preferences. Traffic and transaction information may also be shared with business partners and advertisers on an aggregate and anonymous basis.</p>
+                <p>You do not have to give us any of your personal information to access the Site. If you choose to create a “Data+ Profile” on the Site, any information you add to the public portion of a Data+ Profile will be available to us as well as to other users of the Site.</p>
+                <h6>Children’s Privacy</h6>
+                <p>We do not knowingly collect or save any information from children under the age of 13.</p>
+                <h6>Cookies</h6>
+                <p>We may use cookies to improve your experience using the Site. These cookies do not generally allow us to personally identify a specific user.</p>
+                <h6>Disclosure</h6>
+                <p>We may need to share your information with any of the companies that help provide the Data+ service. We may disclose personal information if required to do so by law or in the good-faith belief that such action is necessary to (1) conform to the edicts of the law or comply with legal process served on Data+ or its parent company, subsidiaries or affiliates, (2) protect and defend the rights or property of Data+ or the users of the Site, or (3) act under exigent circumstances to protect the safety of the public or users of the Site.</p>
+                <h6>Public Forums</h6>
+                <p>The Site may include interactive forums such as message boards and chat rooms. Please remember that any information that is disclosed in these areas becomes public information and you should exercise caution when deciding to disclose your personal information.</p>
+                <h6>Sale or Change of Control</h6>
+                <p>If Data+ or substantially all of its assets are acquired, your information will be one of the assets transferred to the acquirer.</p>
+                Links to Third Party Sites</h6>
+                <p>If you follow any of the links you find on this Site, our privacy policy does not extend to third party sites.</p>
+                <h6>Security</h6>
+                <p>To help protect your personal information we may use security measures, including encryption and password protection.</p>
+                <p>If you have any questions about our Privacy Policy, email us at info@DataPlus.io.</p>
+
+
+<h5>Data+ Licensing Policy</h5>
+                <p>Data+ is a user contributed global resource of the Tech industry profiling the people, companies and venture capital that make up this community. DataPlus.io is operated by Data+.</p>
+                <p>We permit anyone to republish our content in accordance with this licensing policy.</p>
+                <p>We provide Data+’s content under the Creative Commons Attribution License [CC-BY]. Our content includes structured data, overviews and media files associated with companies and people. Our schema, and documentation are also offered under the Creative Commons license.</p>
+                <p>We ask that API users link back to Data+ from any pages that use Data+ data. We want to make sure that everyone is able to find the source of the content to keep the service up-to-date and accurate.</p>
+                <p>This Licensing Policy may be updated from time to time as our services change and grow. If you have any questions about this policy please contact us at licensing@DataPlus.io.</p>
+                <p>Data+ provides a specific licensing contract for services that charge for the use of their data. Contact licensing@DataPlus.io</p>
+                <h6>Contributing to Data+</h6>
+                <p>By uploading data and media files to Data+, you grant permission to Data+ and other sites to access under the conditions of Creative Commons Attribution (CC-BY) and that third parties will provide attribution by linking to Data+.</p>
+                <p>You should not upload media files that cannot be offered under CC-BY or another compatible license.</p>
+                <p>Any time you assign a free license such as CC-BY to a Media File you agree that when third parties reuse this file, they should again provide attribution by linking back to Data+.</p>
+                <h6>Guidelines on Attribution</h6>
+                <p>We ask that API users link back to Data+ from any pages that use Data+ data. There are two types of attribution; the type that is appropriate for you will depend on how you are using the data.</p>
+                <p><strong>1) Single Entity Data</strong></p>
+                <p>When you are using data from a specific Data+ entity in your app, please link to that entity’s Data+ page using a snippet of the following form:</p>
+                <p>Source: <a href="http://www.DataPlus.io/NAMESPACE/PERMALINK" title="NAME on Data+">NAME on Data+</a></p>
+                <p>This allows your visitors to find the source data and contribute improvements to the Data+ community. The attribution will look like:</p>
+                <p>Source: Twitter on Data+</p>
+                <p><strong>2) Multiple Entity Data</strong></p>
+                <p>When you are referencing data from many entities or aggregating data across the site, please link to the Data+ homepage using the following HTML snippet:</p>
+                <p>Source: <a href="http://www.DataPlus.io/" title="Data+">Data+</a></p>
+                <p>The attribution will look like:</p>
+                <p>Source: Data+</p>
+                <p>Special Cases</p>
+                <p>If these attribution guidelines will not be practical for you to follow, please let us know by e-mailing licensing@DataPlus.io. We can discuss alternate approaches. Exceptions must be granted in advance in writing by Data+.</p>
+                <p>Ultimately, it is the user’s responsibility to ensure they are in full compliance with the license terms whenever they reuse Data+ content.</p>
+                <h6>Media Licenses</h6>
+                <p>Media Files in Data+ are offered under a variety of license terms.</p>
+                A specific free license (CC-BY, GFDL, or one of many other free licenses)
+                Public Domain terms (the file has no copyright restrictions and anyone can freely use it)
+                Fair Use terms (the file is a copyrighted work, displayed in Data+ under the terms of Fair Use)
+                <p>Like all of the content in Data+, Media Files can be uploaded and edited by anyone with an Internet connection and are not subject to monitoring by the Data+ staff. As such, Data+ cannot guarantee that the licensing associated with any particular Media File is accurate or complete. If you find a Media File in Data+ that you believe is incorrectly marked, we encourage you to correct the licensing information yourself.</p>
+                <h6>Other Elements of the Site</h6>
+                <p>The graphical layout of the Data+ website and other elements of the Site, Content or Service not described above are the copyright of Data+, and may not be reproduced without permission.</p>
+
 
             </div>
         </div>
