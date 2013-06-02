@@ -10,16 +10,16 @@
 
 	<section id="header">
         <div id="header_wrapper">
-            <div id="logo_container"><a href=""><img id="logo" alt="Logo" src="/images/logo.png" /></a></div>
+            <div id="logo_container"><a href="/"><img id="logo" alt="Logo" src="/images/logo.png" /></a></div>
 
             <div id="menu_container">
                 <a id="data" {{#data}}class="selected"{{/data}} href="/data">
                     <span class="icon"></span>
                 </a>
-                <a {{#projects}}class="selected"{{/projects}} id="projects" href="/projects">
+                <a {{#project}}class="selected"{{/project}} id="projects" href="/projects">
                     <span class="icon"></span>
                 </a>
-                <a {{#problems}}class="selected"{{/problems}} id="problems" href="/problems">
+                <a {{#problem}}class="selected"{{/problem}} id="problems" href="/problems">
                     <span class="icon"></span>
                 </a>
                 <a  id="search" href="#">

@@ -61,26 +61,26 @@ a {
           margin-left: 14px; }
           #header #header_wrapper #menu_container a#search .icon:hover {
             background: url("/images/btn_search.png") left center no-repeat; }
-        #header #header_wrapper #menu_container a#search:hover .icon, #header #header_wrapper #menu_container a .selected .icon {
+        #header #header_wrapper #menu_container a#search:hover .icon, #header #header_wrapper #menu_container a#search.selected .icon {
           background: url("/images/btn_search.png") left center no-repeat; }
         #header #header_wrapper #menu_container a#data .icon {
           background: url("/images/btn_data.png") right center no-repeat;
           width: 23px;
           margin-left: 18px; }
-        #header #header_wrapper #menu_container a#data:hover .icon, #header #header_wrapper #menu_container a .selected .icon {
+        #header #header_wrapper #menu_container a#data:hover .icon, #header #header_wrapper #menu_container a#data.selected .icon {
           background: url("/images/btn_data.png") left center no-repeat; }
         #header #header_wrapper #menu_container a#problems .icon {
           background: url("/images/btn_problems.png") right center no-repeat;
           width: 30px;
           margin-left: 15px; }
-        #header #header_wrapper #menu_container a#problems:hover .icon, #header #header_wrapper #menu_container a .selected .icon {
+        #header #header_wrapper #menu_container a#problems:hover .icon, #header #header_wrapper #menu_container a#problems.selected .icon {
           background: url("/images/btn_problems.png") left center no-repeat;
           margin-left: 14px; }
         #header #header_wrapper #menu_container a#projects .icon {
           background: url("/images/btn_projects.png") right center no-repeat;
           width: 27px;
           margin-left: 16px; }
-        #header #header_wrapper #menu_container a#projects:hover .icon, #header #header_wrapper #menu_container a .selected .icon {
+        #header #header_wrapper #menu_container a#projects:hover .icon, #header #header_wrapper #menu_container a#projects.selected .icon {
           background: url("/images/btn_projects.png") left center no-repeat; }
     #header #header_wrapper #rollovers {
       width: 100%;

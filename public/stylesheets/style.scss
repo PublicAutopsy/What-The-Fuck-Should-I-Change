@@ -72,7 +72,7 @@ a {
               background: url("/images/btn_search.png") left center no-repeat;
             }
           }
-          &#search:hover, .selected{
+          &#search:hover, &#search.selected{
             .icon{
               background: url("/images/btn_search.png") left center no-repeat;
             }
@@ -83,7 +83,7 @@ a {
             width: 23px;
             margin-left: 18px;
           }
-          &#data:hover, .selected{
+          &#data:hover, &#data.selected{
             .icon{
               background: url("/images/btn_data.png") left center no-repeat;
             }
@@ -94,7 +94,7 @@ a {
             width: 30px;
             margin-left: 15px;
           }
-          &#problems:hover, .selected{
+          &#problems:hover, &#problems.selected{
             .icon{
               background: url("/images/btn_problems.png") left center no-repeat;
               margin-left: 14px;
@@ -106,7 +106,7 @@ a {
             width: 27px;
             margin-left: 16px;
           }
-          &#projects:hover, .selected{
+          &#projects:hover, &#projects.selected{
             .icon{
               background: url("/images/btn_projects.png") left center no-repeat;
             }

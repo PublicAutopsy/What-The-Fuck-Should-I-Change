@@ -1,0 +1,9 @@
+{{>header}}
+
+    <section id="body">
+
+        Terms Of Service!
+
+    </section>
+
+{{>footer}}
