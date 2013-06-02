@@ -4,21 +4,39 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
 	<section id="header">
-		<div id="logo_container"><a href="/"><img alt="Logo" /></a></div>
+        <div id="header_wrapper">
+            <div id="logo_container"><a href=""><img id="logo" alt="Logo" src="/images/logo.png" /></a></div>
 
-		<div id="menu_container">
-			<a href="/data">Datasets</a>
-			<a href="/projects">Projects</a>
-			<a href="/problems">Problems</a>
-		</div>
+            <div id="menu_container">
+                <a id="data" href="/data">
+                    <span class="icon"></span>
+                </a>
+                <a id="projects" href="/projects">
+                    <span class="icon"></span>
+                </a>
+                <a id="problems" href="/problems">
+                    <span class="icon"></span>
+                </a>
+                <a id="search" href="#">
+                    <span class="icon"></span>
+                </a>
+            </div>
+            <div id="rollovers">
+                <div class="rollover" id="data_rollover">Data</div>
+                <div class="rollover" id="projects_rollover">Projects</div>
+                <div class="rollover" id="problems_rollover">Problems</div>
+                <div class="rollover" id="search_rollover">Search</div>
+            </div>
 
-		<div id="search_container">
-			<input type="text" id="search_keyword" /><a href="/search/keyword">Search</a>
-		</div>
+            <!--<div id="search_container">-->
+                <!--<input type="text" id="search_keyword" /><a href="/search/keyword">Search</a>-->
+            <!--</div>-->
+        </div>
 	</section>
 		
 	
