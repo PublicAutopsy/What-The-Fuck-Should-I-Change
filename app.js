@@ -56,6 +56,7 @@ app.get('/user/:username', user.user);
 app.get('/api/projects', api.projects);
 app.get('/api/problems', api.problems);
 app.get('/api/datasets', api.datasets);
+app.get('/api/meow', api.meow);
 
 app.get('/:type/:id/upvote', api.upvote);
 

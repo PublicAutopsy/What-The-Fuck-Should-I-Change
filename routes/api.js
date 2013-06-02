@@ -17,16 +17,30 @@ exports.datasets = function(req, res){
     async.series([
         function(callback){
             getDataSet(callback, undefined);
-        },
+        }
+    ],
+    function(err, results){
+
+        res.send(results[0]);
+    });
+};
+
+//Data sets start
+exports.meow = function(req, res){
+    async.series([
         function(callback){
             getDataSet(callback, undefined, true);
         }
     ],
     function(err, results){
-
-        res.send({"data":results[0], "dv":results[1]});
+        if( err ) console.log(err);
+        else
+        {
+            if( res.headerSent == undefined ) res.send(results[0]);
+        }
     });
 };
+
 
 exports.datasetsAdd = function (req, res) {
     res.render('add_view', { title: 'Add a Dataset', data : true });
