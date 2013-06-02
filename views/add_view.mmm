@@ -50,7 +50,7 @@
                 <option value="4">Option 4</option>
             </select>
 
-            <a id="project_submit_btn" >Submit </a>
+            <a id="data_submit_btn" >Submit </a>
         </form>
         </div>
 
@@ -138,7 +138,7 @@
                 <option value="4">Option 4</option>
             </select>
 
-            <a id="project_submit_btn" >Submit </a>
+            <a id="problem_submit_btn" >Submit </a>
         </form>
         </div>
 

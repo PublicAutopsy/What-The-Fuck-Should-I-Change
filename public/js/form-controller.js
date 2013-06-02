@@ -1,3 +1,5 @@
+
+
  $("#data_form_btn").click(function(){
  	$("#form_selection").remove();
  	$("#add_data").fadeIn();
@@ -39,24 +41,26 @@ $("#problem_form #dataset").change(function(e){
 });
 
 
-$("#project_submit_btn").click(function(){
-	var formData = Array();
-	formData["contributer"]=$("#project_form #contributer").val();
-	formData["creator"]=$("#project_form #creator").val();
-	formData["description"]=$("#project_form #description").val();
-	formData["location"]=$("#project_form #location").val();
-	formData["name"]=$("#project_form #name").val();
-	formData["url"]=$("#project_form #informationUrl").val();
+$("#data_submit_btn").click(function(){
+	var formData = Object();
+	formData["contributer"]=$("#data_form #contributor").val();
+	formData["creator"]=$("#data_form #creator").val();
+	formData["description"]=$("#data_form #description").val();
+	formData["location"]=$("#data_form #location").val();
+	formData["name"]=$("#data_form #name").val();
+	formData["url"]=$("#data_form #informationUrl").val();
 	formData["api_types"]=Array();
-	var apiType = $("#project_form #api_type").val();
-	formData["api_types"].push(apiType)
+	var apiType = $("#data_form #api_type").val();
+	formData["api_types"].push({"api_type_id":apiType})
 	formData["problems"]=Array();
-	$("#project_form #problems ul li").each(function(i,target){
-		var item = Array();
-		item["problem_id"]=target.val()
+	$("#data_form #problems ul li").each(function(i,target){
+		var item = Object();
+		item["problem_id"]=$(target).attr("id");
 		formData["problems"].push(item);
 	});
-	console.log(formData);
+	//console.log(formData);
+	console.log(JSON.stringify(formData));
 	
-	
-})
+	$.post('/api/data/add', JSON.stringify(formData));
+});
+

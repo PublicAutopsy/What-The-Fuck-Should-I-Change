@@ -31,15 +31,15 @@ app.get('/random', routes.random);
 app.get('/add', routes.add);
 
 app.get('/data', routes.datasets);
-app.get('/api/data/add', api.datasetsAdd);
+app.post('/api/data/add', api.datasetsAdd);
 app.get('/data/:dataset', routes.datasetSingle);
 
 app.get('/projects', routes.project );
-app.get('/api/projects/add', api.projectAdd );
+app.post('/api/projects/add', api.projectAdd );
 app.get('/projects/:project', routes.projectSingle);
 
 app.get('/problems', routes.problem);
-app.get('/api/problems/add', api.problemAdd);
+app.post('/api/problems/add', api.problemAdd);
 app.get('/problems/:problem', routes.problemSingle);
 
 app.get('/search/:keyword', routes.search);
