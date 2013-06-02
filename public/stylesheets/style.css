@@ -9,7 +9,8 @@ html, body {
 body {
   padding-left: 60px;
   font: 14px 'Roboto', Helvetica, Arial, sans-serif;
-  min-height: 640px; }
+  min-height: 640px;
+  background: #f1f1f1; }
 
 *:focus {
   outline: 0; }
@@ -23,6 +24,7 @@ a {
   overflow: hidden;
   display: block;
   position: absolute;
+  overflow-x: hidden;
   top: 0;
   left: 0; }
 
@@ -187,7 +189,6 @@ a {
   #info_window .filter_box {
     height: 60px;
     width: 100%;
-    margin-bottom: 20px;
     background: #e5e5e5;
     font-size: 24px;
     font-weight: 100;
@@ -198,9 +199,12 @@ a {
     padding-right: 40px;
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 20px; }
+  #info_window .created_date {
+    margin-bottom: 20px; }
   #info_window .title {
     font-size: 30px;
-    font-weight: 100; }
+    font-weight: 100;
+    margin-top: 20px; }
     #info_window .title a {
       color: #484848;
       text-decoration: none; }
@@ -237,7 +241,8 @@ a {
     #content .page#second {
       background: url("/images/rand/1.jpg"); }
     #content .page#third {
-      background: #f1f1f1; }
+      background: #f1f1f1;
+      min-height: 840px; }
       #content .page#third .content {
         width: 740px;
         padding-top: 20px;

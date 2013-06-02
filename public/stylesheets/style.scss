@@ -12,6 +12,7 @@ body {
   padding-left: 60px;
   font: 14px 'Roboto', Helvetica, Arial, sans-serif;
   min-height: 640px;
+  background: #f1f1f1;
 }
 
 *:focus {
@@ -27,6 +28,7 @@ a {
 	overflow:hidden;
 	display:block;
 	position:absolute;
+  overflow-x: hidden;
 	top:0;
 	left:0;
 }
@@ -253,7 +255,6 @@ a {
   .filter_box{
     height:60px;
     width:100%;
-    margin-bottom: 20px;
     background: #e5e5e5;
     font-size: 24px;
     font-weight: 100;
@@ -267,9 +268,13 @@ a {
     padding-bottom: 20px;
 
   }
+  .created_date{
+    margin-bottom: 20px;
+  }
   .title{
     font-size: 30px;
     font-weight: 100;
+    margin-top: 20px;
     a{
       color:#484848;
       text-decoration: none;
@@ -318,6 +323,7 @@ a {
     }
     &#third{
       background: #f1f1f1;
+      min-height: 840px;
       .content{
         width: 740px;
         padding-top: 20px;
