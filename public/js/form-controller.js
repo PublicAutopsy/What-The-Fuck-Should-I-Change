@@ -94,3 +94,25 @@ $("#project_submit_btn").click(function(){
 	$.post('/api/projects/add', formData);
 });
 
+
+$("#problem_submit_btn").click(function(){
+	var formData = {};
+	formData["contributer_id"]=$("#problem_form #contributor").val();
+	formData["creator"]=$("#problem_form #creator").val();
+	formData["description"]=$("#problem_form #description").val();
+	formData["location"]=$("#problem_form #location").val();
+	formData["name"]=$("#problem_form #name").val();
+	formData["url"]=$("#problem_form #projectUrl").val();
+	formData["datasets"]= new Array();
+	$("#problem_form #problems ul li").each(function(i,target){
+		var item = Object();
+		item["dataset_id"]=$(target).attr("id");
+		formData["datasets"].push(item);
+	});
+	
+
+	//console.log(formData);
+	//console.log(JSON.stringify(formData));
+
+	$.post('/api/problems/add', formData);
+});
