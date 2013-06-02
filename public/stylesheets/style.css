@@ -194,6 +194,11 @@ a {
     background: rgba(255, 255, 255, 0.9);
     display: block;
     border: 1px solid #e5e5e5; }
+    #info_window .close_btn .chevron {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url("/images/btn_sidenav_openclose.png") -49px center no-repeat; }
   #info_window .filter_box {
     height: 60px;
     width: 100%;
@@ -247,7 +252,8 @@ a {
       bottom: 0px;
       left: 50%;
       margin-left: -84px;
-      display: block; }
+      display: block;
+      z-index: 9000; }
     #content .page#first {
       background: url("/images/rand/4.jpg") center center no-repeat;
       background-size: cover; }
@@ -423,3 +429,10 @@ a {
 
 .visualization {
   position: fixed; }
+
+#randOutput {
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 300;
+  padding-left: 20px;
+  padding-top: 100px; }
