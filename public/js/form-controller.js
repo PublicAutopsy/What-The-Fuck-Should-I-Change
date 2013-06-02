@@ -58,9 +58,9 @@ $("#data_submit_btn").click(function(){
 		item["problem_id"]=$(target).val()
 		formData["problems"].push(item);
 	});
-	console.log(formData);
+	//console.log(formData);
 	console.log(JSON.stringify(formData));
 	
-	
+	$.post('/api/data/add', JSON.stringify(formData));
 });
 
