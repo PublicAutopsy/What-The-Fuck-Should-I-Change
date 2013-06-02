@@ -3,41 +3,163 @@
 {{>header}}
 
 
-	<section id="body">
+	<section id="content">
 
-        <form action="POST">
-            <label for="name">Name</label>
-            <input id="name" type="text"/>
-            <label for="contributor">Contributor</label>
-            <input id="contributor" type="text"/>
-            <label for="creator">Creator</label>
-            <input id="creator" type="text"/>
-            <label for="description">Description</label>
-            <input id="description" type="text"/>
-            <label for="description">Project URL</label>
-            <input id="projectUrl" type="text"/>
-            <label for="description">Information URL</label>
-            <input id="informationUrl" type="text"/>
-            {{#project}}
-                <label for="description">Data Used</label>
-                <input id="data" type="text"/>
-            {{/project}}
-            {{#data}}
-                <label for="description">Type</label>
-                <input id="type" type="text"/>
-            {{/data}}
-            {{#problem}}
-                <!--<label for="description">Type</label>-->
-                <!--<input id="type" type="text"/>-->
-            {{/problem}}
+        <section id="form_selection">
+        <h1>Choose from an option below</h1>
+        <a href="#" id="data_form_btn">Add Dataset</a>
+        <a href="#" id="project_form_btn">Add Project</a>
+        <a href="#" id="problem_form_btn">Add Problem</a>
+        </section>
 
-            <input type="submit"/>
+        <div id="add_data">
+        <form action="POST" class="add_form" id="data_form">
+
+             <input id="name" type="text" placeholder="Title"/>
+
+            <input id="contributor" type="text" placeholder="Your Name"/>
+            
+            
+            <input id="creator" type="text" placeholder="Project Creator"/>
+            
+            
+            <textarea id="description" placeholder="Project Description" ></textarea>
+   
+            <input id="informationUrl" type="text" placeholder="Project Documentation"/>
+
+            <input id="location" type="text" placeholder="Project Location"/>
+
+            <label for="api_type" class="title">Data Type</label>
+            <select id="api_type">
+                <option value="0">XML</option>
+                <option value="1">JSON</option>
+                <option value="2">CSV</option>
+                <option value="3">Document</option>
+            </select>
 
 
+            <div class="form_list" id="problems">
+                <div class="title">Related Problems</div>
+                <ul></ul>
+            </div>
 
+            <select id="problems" value="Select A Problem">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="3">Option 4</option>
+            </select>
 
+            <a id="project_submit_btn" >Submit </a>
         </form>
+        </div>
 
+         <div id="add_project">
+        <form action="POST" class="add_form" id="project_form">
+  
+          
+            <input id="name" type="text" placeholder="Title"/>
+
+            <input id="contributor" type="text" placeholder="Your Name"/>
+            
+            
+            <input id="creator" type="text" placeholder="Project Creator"/>
+            
+            
+            <textarea id="description" placeholder="Project Description" ></textarea>
+            
+            
+            <input id="projectUrl" type="text" placeholder="Project URL"/>
+            
+            <input id="repositoryUrl" type="text" placeholder="Repository URL"/>
+        
+            <input id="informationUrl" type="text" placeholder="Project Documentation"/>
+
+            <input id="location" type="text" placeholder="Project Location"/>
+
+            <div class="form_list" id="datasets">
+                <div class="title">Related Data Sets</div>
+                <ul></ul>
+            </div>
+
+            <select id="dataset" value="Select A Dataset">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="3">Option 4</option>
+            </select>
+
+            <div class="form_list" id="problems">
+                <div class="title">Related Problems</div>
+                <ul></ul>
+            </div>
+
+            <select id="problems" value="Select A Problem">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="3">Option 4</option>
+            </select>
+  
+            <a id="project_submit_btn" >Submit </a>
+   
+        </form>
+        </div>
+
+         <div id="add_problem">
+        <form action="POST" class="add_form" id="problem_form">
+           
+            <input id="name" type="text" placeholder="Title"/>
+
+            <input id="contributor" type="text" placeholder="Your Name"/>
+            
+            
+            <input id="creator" type="text" placeholder="Project Creator"/>
+            
+            
+            <textarea id="description" placeholder="Project Description" ></textarea>
+            
+            
+            <input id="projectUrl" type="text" placeholder="Project URL"/>
+    
+
+            <input id="location" type="text" placeholder="Project Location"/>
+
+          
+            <div class="form_list" id="datasets">
+                <div class="title">Related Data Sets</div>
+                <ul></ul>
+            </div>
+
+            <select id="dataset" value="Select A Dataset">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="3">Option 4</option>
+            </select>
+
+           
+            <div class="form_list" id="problems">
+                <div class="title">Related Problems</div>
+                <ul></ul>
+            </div>
+
+            <select id="problems" value="Select A Problem">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="3">Option 4</option>
+            </select>
+
+
+           
+           
+
+           
+          
+            <a id="project_submit_btn" >Submit </a>
+        </form>
+        </div>
 
 	</section>
 

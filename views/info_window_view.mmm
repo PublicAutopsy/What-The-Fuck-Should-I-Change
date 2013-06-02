@@ -1,0 +1,112 @@
+<div id="info_window">
+		
+
+
+		<div class="title">Dataset Name</div>
+		<div class="contributor">Contributor: John Smith</div>
+		<div class="creator">Creeator: John Smith</div>
+
+
+
+		<div class="project_description">
+			Art party next level cornhole roof party Etsy quis, nulla butcher. Jean shorts duis authentic tumblr. Quis dolor mixtape, Vice laborum leggings eiusmod pour-over deep v irure pariatur polaroid synth. Ennui narwhal Brooklyn, culpa direct trade Neutra before they sold out. Messenger bag ea vinyl fugiat, hoodie selvage street art Pinterest ethical consectetur locavore. Tote bag Austin gentrify, ennui next level asymmetrical Godard bespoke. Deserunt kale chips Marfa street art et.
+
+			Organic direct trade art party, gluten-free street art blue bottle try-hard aesthetic fashion axe VHS qui cliche. Lo-fi cardigan farm-to-table mumblecore laboris. Reprehenderit fanny pack dreamcatcher photo booth adipisicing, Neutra literally wolf chillwave kogi commodo. Anim proident mlkshk esse, master cleanse fixie twee bitters swag literally tofu nisi VHS accusamus. Umami meh viral fingerstache, wayfarers pork belly magna. Laborum street art cornhole art party, raw denim ethnic minim irure Portland non YOLO Neutra forage. Seitan ad veniam, sunt dolor +1 fugiat proident gluten-free meggings culpa scenester skateboard.
+
+
+		</div>
+
+		<div class="social_links">
+			<a href="#" class="vote_btn">2260</a>
+			<a href="#" class="share_btn">933</a>
+		</div>
+		<div class="project_link">Project Link</div>
+		
+		<div class="repository_link">Repository Link</div>
+
+		<div id="commements_container">
+			<a href="#" class="comments_btn">9 comments</a>
+			<div class="comments_list">
+				<div class="comment_item">
+					<div class="avatar"><img src="" /></div>
+					<div class="timestamp">14:22</div>
+					<div class="comment_text">This is a prety awsome comment</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<div id="left_rail">
+			<div class="source">
+				<span class="title">Source</span>
+				<span class="text">Link</span>
+			</div>
+			<div class="submitted_date">
+				<span class="title">Date Submitted</span>
+				<span class="text">12/12/13</span>
+			</div>
+			<div class="created_date">
+				<span class="title">Date Created</span>
+				<span class="text">12/13/03</span>
+			</div>
+			<div class="timespan">
+				<span class="title">Timespan</span>
+				<span class="text">10yrs</span>
+			</div>
+			
+			<div class="type">
+				<span class="title">Type</span>
+				<span class="text">API</span>
+			</div>
+
+			<div class="status">
+				<span class="title">Status</span>
+				<span class="text">Live</span>
+			</div>
+
+		
+			<div class="location">
+				<span class="title">Location</span>
+				<span class="text">San Francisco, CA</span>
+			</div>
+			
+			<div class="category">
+				<span class="title">Category</span>
+				<span class="text">Category Name</span>
+			</div>
+		
+		</div>
+		<a href='#' class="close_btn">close</a>
+
+
+
+		<!-- START related projects module -->
+		<div class="related_projects">
+			<div class="container">
+				<a href="/projects/221352">Project Title</a>
+				<a href="/projects/221352">Project Title</a>
+			</div>
+		</div>
+		<!-- END related projects module -->
+
+		<!-- START related datasets module -->
+		<div class="related_projects">
+			<div class="container">
+				<a href="/data/221352">Dataset Title</a>
+				<a href="/data/221352">Dataset Title</a>
+			</div>
+		</div>
+		<!-- END related datasets module -->
+
+		<!-- START related problems module -->
+		<div class="related_projects">
+			<div class="container">
+				<a href="/problems/221352">Problem Title</a>
+				<a href="/problems/221352">Problem Title</a>
+			</div>
+		</div>
+		<!-- END related problems module -->
+
+
+	</div>

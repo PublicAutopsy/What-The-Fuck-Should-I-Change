@@ -3,9 +3,11 @@
 {{>header}}
 
 
-	<section id="body">
+	<section id="content">
 
-	Content page content
+		Content page content
+
+		{{>info_window_view}}
 
 	</section>
 
