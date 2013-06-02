@@ -75,7 +75,6 @@
                
                 <div class="dataSet">
                     <div class="name"><a href="/data/{{dataset_id}}">{{name}}</a></div>
-                    <div class="types">{{#api_types}}{{name}}{{/api_types}}</div>
                 </div>
             {{/datasets}}
             </div>
