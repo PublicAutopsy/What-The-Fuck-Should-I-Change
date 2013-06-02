@@ -230,6 +230,10 @@ a {
     font-size: 14px;
     color: #484848;
     padding-right: 60px; }
+  #info_window .url {
+    font-size: 14px;
+    color: #484848;
+    padding-right: 60px; }
   #info_window .userData {
     margin-top: 20px;
     min-height: 50px; }

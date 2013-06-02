@@ -34,7 +34,7 @@
             </div>
             <div class="location">{{location}}</div>
             <div class="description">{{description}}</div>
-            <div class="category">{{tags}}</div>
+            <div class="url">{{url}}</div>
 
             <!-- START only visible for datasets -->
             <div class="datasets">{{#datasets}}
@@ -60,8 +60,8 @@
                 <div class="created_date">{{timestamp}}</div>
             </div>
             <div class="description">{{description}}</div>
-
             <div class="url">{{url}}</div>
+
 
 
             <div class="datasets">
@@ -76,7 +76,7 @@
             <div class="problems">
                 {{#problems}}
                 <div class="problem">
-                    <div class="name"><a href="/projects/{{problem_id}}">{{name}}</a></div>
+                    <div class="name"><a href="/problems/{{problem_id}}">{{name}}</a></div>
                 </div>
             {{/problems}}</div>
         </div>
