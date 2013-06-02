@@ -37,7 +37,7 @@ exports.datasets = function(req, res){
     ],
     // optional callback
     function(err, results){
-        res.render('list_view', results[0]);
+        res.render('list_view', {dataList : results[0], data : true});
     });
 };
 
@@ -68,7 +68,7 @@ exports.project = function (req, res) {
 
         // optional callback
         function(err, results){
-            res.render('list_view', results[0]);
+            res.render('list_view', {projectList : results[0], project : true});
         });
 
 };
@@ -99,7 +99,7 @@ exports.problem = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.render('list_view', results[0]);
+            res.render('list_view', {problemList : results[0], problem : true});
         });
 };
 

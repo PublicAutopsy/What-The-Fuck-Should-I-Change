@@ -1,17 +1,78 @@
 <article class="list_item" >
 	<div class="container" >
-		
-		<div class="title"><a href="/projects/14566">Title</a></div>
-		<div class="contributor">Contributor</div>
-		<div class="creator">Creator</div>
-		<div class="description">Description</div>
-		<div class="created_date">Created Date</div>
-		<div class="category">Category</div>
-		<div class="votes"> <a href="#">Vote</a> | Vote Count</div>
 
-		<!-- START only visible for datasets -->
-		<div class="data_type">Dataset Type</div>
-		<!-- END only visible for datasets -->
+        {{#dataList}}
+            <div class="dataItem">
+                <div class="title"><a href="/projects/{{dataset_id}}">{{name}}</a></div>
+                <div class="contributor">{{contributor}}</div>
+                <div class="creator">{{creator}}</div>
+                <div class="description">{{description}}</div>
+                <div class="created_date">{{timespan}}</div>
+                <div class="category">{{tags}}</div>
+                <div class="votes"> <a href="#">Vote</a> | Vote Count</div>
+
+                <!-- START only visible for datasets -->
+                <div class="data_type">{{#api_types}}{{name}} {{/api_types}}</div>
+                <!-- END only visible for datasets -->
+            </div>
+
+        {{/dataList}}
+        {{#problemList}}
+            <div class="dataItem">
+                <div class="title"><a href="/projects/{{problem_id}}">{{name}}</a></div>
+                <div class="contributor">{{contributor}}</div>
+                <div class="creator">{{creator}}</div>
+                <div class="location">{{location}}</div>
+                <div class="description">{{description}}</div>
+                <div class="created_date">{{timespan}}</div>
+                <div class="category">{{tags}}</div>
+                <div class="votes"> <a href="#">Vote</a> | Vote Count</div>
+
+                <!-- START only visible for datasets -->
+                <div class="datasets">{{#datasets}}
+                    <div class="dataSet">
+                        <div class="name"><a href="/projects/{{dataset_id}}">{{name}}</a></div>
+                        <div class="description">{{description}}</div>
+                        <div class="types">{{#api_types}}{{name}}{{/api_types}}</div>
+
+
+                    </div>
+                {{/datasets}}</div>
+                <!-- END only visible for datasets -->
+            </div>
+
+        {{/problemList}}
+        {{#projectList}}
+            <div class="dataItem">
+                <div class="title"><a href="/projects/{{project_id}}">{{name}}</a></div>
+                <div class="contributor">{{contributor}}</div>
+                <div class="creator">{{creator}}</div>
+                <div class="description">{{description}}</div>
+                <div class="created_date">{{timestamp}}</div>
+                <div class="url">{{url}}</div>
+                <div class="votes"> <a href="#">Vote</a> | Vote Count</div>
+
+
+                <div class="datasets">{{#datasets}}
+                    <div class="dataSet">
+                        <div class="name"><a href="/projects/{{dataset_id}}">{{name}}</a></div>
+                        <div class="description">{{description}}</div>
+                        <div class="types">{{#api_types}}{{name}}{{/api_types}}</div>
+
+
+                    </div>
+                {{/datasets}}</div>
+                <div class="problems">{{#problems}}
+                    <div class="problem">
+                        <div class="name"><a href="/projects/{{problem_id}}">{{name}}</a></div>
+                        <div class="description">{{description}}</div>
+                    </div>
+                {{/problems}}</div>
+            </div>
+
+        {{/projectList}}
+
+
 
 
 	</div>
