@@ -6,39 +6,45 @@
 	<section id="body">
 
 
-        <div id="random" class="page">
-            <div class="title">Discover Technology For Change</div>
+        <div id="first" class="page">
+            <div class="splash">
+                <div id="name">
+                    Data+
+                </div>
+                <div id="tagline">
+                    Discover Technology For Change
+                </div>
+            </div>
             <div class="content"></div>
         </div>
-        <div class="page">
-            <div class="content"></div>
+        <div id="second" class="page">
+            <div class="title">
+                About
+            </div>
+            <div class="content">
+                <p>The ability to locate accessible, robust and reliable data is a requirement for achieving more effective, impactful and sustainable change.</p>
+
+                <p> Despite the increasing availability of verifiable data, however, there is no single, searchable and trusted resource that policy-makers, community-leaders and digital activists can use to both streamline and amplify their efforts. </p>
+
+                <p>Data sources are broken or atrophied, collections are siloed and the outputs of civic hacking events are often lost, incomplete or abandoned, resulting in replication of effort, wasted resources and missed opportunities. Further, the value of these datasets remains largely unknown despite the number of times they have been researched, utilised and reviewed.</p>
+
+                <p>Data+ helps resolve these problems by providing a global, publicly accessible, crowd-sourced and peer-reviewed database of problems, projects and datasets that policy makers, academics, community leaders, geeks, activists and concerned citizens alike can use in their quest to redesign the world.</p>
+                <p class="dplus">Find meaning with Data+</p>
+
+            </div>
         </div>
-        <div class="page">
-            <div class="content"></div>
-        </div>
-        <div class="page">
-            <div class="content"></div>
-        </div>
-        <div class="page">
-            <div class="content"></div>
-        </div>
-        <div class="page">
-            <div class="content"></div>
-        </div>
-        <div class="page">
-            <div class="content"></div>
+        <div id="third" class="page">
+            <div class="content">
+                <div class="module"></div>
+                <div class="module"></div>
+                <div class="module"></div>
+                <div class="module bottom"></div>
+                <div class="module"></div>
+            </div>
+
         </div>
 
 	</section>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            var imageURL = ["/images/rand/1.jpg","/images/rand/2.jpg","/images/rand/3.jpg","/images/rand/4.jpg","/images/rand/5.jpg"]
-            var rand = Math.floor(Math.random() * 5);
-            console.log(imageURL[rand]);
-            $("#random").css({"background": "url("+imageURL[rand]+") center center no-repeat", "backgroundPosition": "cover"});
-
-        });
-    </script>
 
 {{>footer}}

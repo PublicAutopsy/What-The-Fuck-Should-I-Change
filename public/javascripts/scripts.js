@@ -13,3 +13,13 @@ $("#menu_container a").hover(function(e){
 
     }
 });
+
+$("#search").click(function(){
+    $("#search_box").fadeIn("fast");
+    $("#search_field").focus();
+    return false;
+});
+$("#search_close").click(function(){
+    $("#search_box").fadeOut("fast");
+    return false;
+})

@@ -15,7 +15,7 @@ exports.index = function (req, res) {
 };
 
 exports.toc = function (req, res) {
-    res.render('index', { title: 'Terms of Service' });
+    res.render('toc', { title: 'Terms of Service' });
 };
 
 exports.random = function (req, res) {

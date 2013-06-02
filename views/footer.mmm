@@ -3,6 +3,18 @@
 	
 	</section>
 
+
+    <div id="search_box">
+        <div id="input">
+            <input id="search_field" name="search" placeholder="Type Your Search" type="text"/>
+            <label for="search">Press enter to complete your search</label>
+        </div>
+
+        <div id="search_close">
+            <img src="/images/btn_search_close.png" alt=""/>
+        </div>
+    </div>
+
         <script type="text/javascript" src="/javascripts/scripts.js"></script>
 </body>
 </html>
