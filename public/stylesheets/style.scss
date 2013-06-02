@@ -437,6 +437,19 @@ a {
   .shareBtns{
     width: 575px;
     margin:auto;
+
+    a{
+      color: #626262;
+      text-decoration: none;
+    }
+    span.data{
+      display: block;
+      position:relative;
+      bottom:-130px;
+      width:100%;
+      text-align: center;
+
+    }
   }
   #data_form_btn{
     display: block;

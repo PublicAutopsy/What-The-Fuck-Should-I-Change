@@ -327,6 +327,15 @@ a {
 #form_selection .shareBtns {
   width: 575px;
   margin: auto; }
+  #form_selection .shareBtns a {
+    color: #626262;
+    text-decoration: none; }
+  #form_selection .shareBtns span.data {
+    display: block;
+    position: relative;
+    bottom: -130px;
+    width: 100%;
+    text-align: center; }
 #form_selection #data_form_btn {
   display: block;
   float: left;
