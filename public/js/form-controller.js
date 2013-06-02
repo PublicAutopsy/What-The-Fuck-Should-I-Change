@@ -55,7 +55,7 @@ $("#data_submit_btn").click(function(){
 	formData["problems"]=Array();
 	$("#data_form #problems ul li").each(function(i,target){
 		var item = Object();
-		item["problem_id"]=$(target).val()
+		item["problem_id"]=$(target).attr("id");
 		formData["problems"].push(item);
 	});
 	//console.log(formData);
