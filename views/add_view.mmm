@@ -5,7 +5,39 @@
 
 	<section id="body">
 
-	Add View
+        <form action="POST">
+            <label for="name">Name</label>
+            <input id="name" type="text"/>
+            <label for="contributor">Contributor</label>
+            <input id="contributor" type="text"/>
+            <label for="creator">Creator</label>
+            <input id="creator" type="text"/>
+            <label for="description">Description</label>
+            <input id="description" type="text"/>
+            <label for="description">Project URL</label>
+            <input id="projectUrl" type="text"/>
+            <label for="description">Information URL</label>
+            <input id="informationUrl" type="text"/>
+            {{#project}}
+                <label for="description">Data Used</label>
+                <input id="data" type="text"/>
+            {{/project}}
+            {{#data}}
+                <label for="description">Type</label>
+                <input id="type" type="text"/>
+            {{/data}}
+            {{#problem}}
+                <!--<label for="description">Type</label>-->
+                <!--<input id="type" type="text"/>-->
+            {{/problem}}
+
+            <input type="submit"/>
+
+
+
+
+        </form>
+
 
 	</section>
 

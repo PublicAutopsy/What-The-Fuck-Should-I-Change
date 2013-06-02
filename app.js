@@ -27,8 +27,8 @@ app.get('/', routes.index);
 app.get('/random', routes.random);
 
 app.get('/data', routes.datasets);
-app.get('/data/:dataset', routes.datasetSingle);
 app.get('/data/add', routes.datasetsAdd);
+app.get('/data/:dataset', routes.datasetSingle);
 
 app.get('/projects', routes.project );
 app.get('/projects/add', routes.projectAdd );
