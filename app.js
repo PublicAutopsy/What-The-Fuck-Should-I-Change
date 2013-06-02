@@ -31,15 +31,15 @@ app.get('/random', routes.random);
 app.get('/add', routes.add);
 
 app.get('/data', routes.datasets);
-app.get('/data/add', routes.datasetsAdd);
+app.get('/api/data/add', api.datasetsAdd);
 app.get('/data/:dataset', routes.datasetSingle);
 
 app.get('/projects', routes.project );
-app.get('/projects/add', routes.projectAdd );
+app.get('/api/projects/add', api.projectAdd );
 app.get('/projects/:project', routes.projectSingle);
 
 app.get('/problems', routes.problem);
-app.get('/problems/add', routes.problemAdd);
+app.get('/api/problems/add', api.problemAdd);
 app.get('/problems/:problem', routes.problemSingle);
 
 app.get('/search/:keyword', routes.search);
@@ -57,6 +57,7 @@ app.get('/api/projects', api.projects);
 app.get('/api/problems', api.problems);
 app.get('/api/datasets', api.datasets);
 
+app.get('/:type/:id/upvote', api.upvote);
 
 
 
