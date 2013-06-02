@@ -155,7 +155,7 @@ function getDataSet( callback, id, forDV )
             holderObj[key].problems = removeKeys(holderObj[key].problems);
         }
 
-        if( forDV )
+        if( false )
         {
             var keyless = removeKeys(holderObj);
             var dvObj = {'name': 'datasets', 'size':5000, 'classname':'start', 'children':[]};
