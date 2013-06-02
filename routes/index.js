@@ -24,7 +24,7 @@ exports.random = function (req, res) {
 
 exports.add = function (req, res) {
     //var dsQuery = 'INSERT INTO datasets ()';
-    res.render('add_view', { title: 'Add Content', data : true });
+    res.render('add_view', { title: 'Add Content', add : true });
 };
 
 //Data sets start
@@ -52,7 +52,7 @@ exports.datasetSingle = function(req, res){
     ],
     // optional callback
     function(err, results){
-        res.render('content_view', results[0]);
+        res.render('content_view',{dataList : results[0], data : true});
     });
 };
 
@@ -83,7 +83,7 @@ exports.projectSingle = function (req, res) {
 
         // optional callback
         function(err, results){
-            res.render('content_project_view', results[0]);
+            res.render('content_project_view', {projectList : results[0], project : true});
         });
 
 };
@@ -114,7 +114,7 @@ exports.problemSingle = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.render('content_view', results[0]);
+            res.render('content_view', {problemList : results[0], problem : true});
         });
 };
 //problem end

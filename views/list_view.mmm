@@ -5,7 +5,7 @@
 
 	<section id="content">
 		<div class="list_view">
-			{{>list_item_view}}
+			{{>info_window_view}}
 		</div>
 	</section>
 
