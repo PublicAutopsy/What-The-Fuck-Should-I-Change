@@ -182,3 +182,6 @@ a {
       font-weight: 100;
       font-style: italic;
       padding-top: 25px; }
+
+#add_data, #add_project, #add_problem {
+  display: none; }

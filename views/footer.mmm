@@ -6,5 +6,6 @@
 </div>
 <script src="/js/jquery-1.10.1.min.js"></script>
 <script src="/js/script.js"></script>
+<script src="/js/form-controller.js"></script>
 
 </html>
