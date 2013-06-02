@@ -24,6 +24,8 @@ if ('development' == app.get('env')) {
 }
 // routes/index.js
 app.get('/', routes.index);
+app.get('/policies', routes.toc);
+
 app.get('/random', routes.random);
 
 app.get('/data', routes.datasets);

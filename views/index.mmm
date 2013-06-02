@@ -5,7 +5,7 @@
 
 	<section id="content">
 
-	Homepage content
+	{{title}}
 
 	</section>
 
