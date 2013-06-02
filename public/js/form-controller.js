@@ -116,3 +116,31 @@ $("#problem_submit_btn").click(function(){
 
 	$.post('/api/problems/add', formData);
 });
+
+var dataObj;
+var projectsObj;
+var problemsObj;
+$.get('/api/problems', function(data){
+ problemsObj = data;
+ console.log(data);
+ $.each(problemsObj, function(i, d){
+ 	console.log(d);
+ 	$(".add_form #problems").append("<option value='"+d.problem_id+"'>"+d.name+"</option>")
+ });
+});
+$.get('/api/projects', function(data){
+ projectsObj = data;
+ console.log(data);
+ $.each(projectsObj, function(i, d){
+ 	console.log(d);
+ 	$(".add_form #projects").append("<option value='"+d.project_id+"'>"+d.name+"</option>")
+ });
+});
+$.get('/api/datasets', function(data){
+ dataObj = data;
+ console.log(data);
+ $.each(dataObj, function(i, d){
+ 	console.log(d);
+ 	$(".add_form #dataset").append("<option value='"+d.datasets_id+"'>"+d.name+"</option>")
+ });
+});
