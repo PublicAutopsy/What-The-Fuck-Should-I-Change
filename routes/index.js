@@ -22,9 +22,8 @@ exports.datasets = function(req, res){
     getDataSet( res );
 };
 
-
 exports.datasetsAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Datasets' });
+    res.render('add_view', { title: 'Add a Dataset', data : true });
 };
 
 exports.datasetSingle = function(req, res){
@@ -71,7 +70,7 @@ exports.problemSingle = function (req, res) {
 exports.search = function (req, res) {
     var keyword = req.params.search;
     res.render('search_view', {title: 'Search Results for ' + keyword });
-}
+};
 
 function removeKeys( pObj )
 {
