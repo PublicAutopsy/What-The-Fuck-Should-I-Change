@@ -3,13 +3,10 @@
 {{>header}}
 
 
-	<section id="body">
-
+	<section id="content">
 		<div class="list_view">
 			{{>list_item_view}}
-
 		</div>
-
 	</section>
 
 
