@@ -369,9 +369,8 @@ exports.problemAdd = function (req, res) {
 };
 
 exports.datasetsAdd = function (req, res) {
-    req.params = {"contributer":"asdf","creator":"sadf","description":"asdfasdfsa","location":"asfadf","name":"asdf","url":"asdfasdfs","api_types":[{"api_type_id":"1"}],"problems":[{"problem_id":0},{"problem_id":0},{"problem_id":0}]};
-
-    var dataset = req.params;
+    var dataset = req.body;
+    console.log(req.body);
     var dataset_id;
     var creator_id;
     async.series([

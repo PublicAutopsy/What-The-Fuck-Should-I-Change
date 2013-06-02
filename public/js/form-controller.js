@@ -42,25 +42,26 @@ $("#problem_form #dataset").change(function(e){
 
 
 $("#data_submit_btn").click(function(){
-	var formData = Object();
-	formData["contributer"]=$("#data_form #contributor").val();
+	var formData = {};
+	formData["contributer_id"]=$("#data_form #contributor").val();
 	formData["creator"]=$("#data_form #creator").val();
 	formData["description"]=$("#data_form #description").val();
 	formData["location"]=$("#data_form #location").val();
 	formData["name"]=$("#data_form #name").val();
 	formData["url"]=$("#data_form #informationUrl").val();
-	formData["api_types"]=Array();
+	formData["api_types"]= new Array();
 	var apiType = $("#data_form #api_type").val();
 	formData["api_types"].push({"api_type_id":apiType})
-	formData["problems"]=Array();
+	formData["problems"]= new Array();
 	$("#data_form #problems ul li").each(function(i,target){
 		var item = Object();
 		item["problem_id"]=$(target).attr("id");
 		formData["problems"].push(item);
 	});
+
 	//console.log(formData);
-	console.log(JSON.stringify(formData));
-	
-	$.post('/api/data/add', JSON.stringify(formData));
+	//console.log(JSON.stringify(formData));
+
+	$.post('/api/data/add', formData);
 });
 
