@@ -26,6 +26,7 @@
                 <div class="description">{{description}}</div>
                 <div class="created_date">{{timespan}}</div>
                 <div class="category">{{tags}}</div>
+                <div class="link"><a href="{{url}}">{{url}}</a></div>
                 <div class="votes"> <a href="#">Vote</a> | Vote Count</div>
 
                 <!-- START only visible for datasets -->
