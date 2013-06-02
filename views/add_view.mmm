@@ -6,10 +6,12 @@
 	<section id="content">
 
         <section id="form_selection">
-        <h1>Choose from an option below</h1>
-        <a href="#" id="data_form_btn">Add Dataset</a>
-        <a href="#" id="project_form_btn">Add Project</a>
-        <a href="#" id="problem_form_btn">Add Problem</a>
+        <h1>What Do You Want To Share?</h1>
+        <div class="shareBtns">
+            <a href="#" id="data_form_btn"></a>
+            <a href="#" id="project_form_btn"></a>
+            <a href="#" id="problem_form_btn"></a>
+        </div>
         </section>
 
         <div id="add_data">
@@ -50,7 +52,7 @@
                 <option value="4">Option 4</option>
             </select>
 
-            <a id="data_submit_btn" >Submit </a>
+            <a class="submit_btn" id="data_submit_btn" >DONE </a>
         </form>
         </div>
 
@@ -101,7 +103,7 @@
                 <option value="4">Option 4</option>
             </select>
   
-            <a id="project_submit_btn" >Submit </a>
+            <a class="submit_btn" id="project_submit_btn" >DONE </a>
    
         </form>
         </div>
@@ -138,7 +140,7 @@
                 <option value="4">Option 4</option>
             </select>
 
-            <a id="problem_submit_btn" >Submit </a>
+            <a class="submit_btn" id="problem_submit_btn" >DONE </a>
         </form>
         </div>
 
