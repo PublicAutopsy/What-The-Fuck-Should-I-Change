@@ -5,7 +5,9 @@
 
 	<section id="content">
 
-		Content page content
+		<div class="visualization">
+		 {{>visualization}}
+		</div>
 
 		{{>info_window_view}}
 

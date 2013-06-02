@@ -13,6 +13,7 @@ body {
   font: 14px 'Roboto', Helvetica, Arial, sans-serif;
   min-height: 640px;
   background: #f1f1f1;
+  overflow-y:hidden; 
 }
 
 *:focus {
@@ -272,6 +273,7 @@ a {
     padding-right:40px;
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 20px;
+    background:#fff;
 
   }
   .datasets{
@@ -286,7 +288,7 @@ a {
   .title{
     font-size: 30px;
     font-weight: 100;
-    margin-top: 20px;
+    padding-top: 20px;
     a{
       color:#484848;
       text-decoration: none;
@@ -520,4 +522,8 @@ a {
 
 #add_data, #add_project, #add_problem{
   display:none;
+}
+
+.visualization{
+  position:fixed;
 }

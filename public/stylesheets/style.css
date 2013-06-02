@@ -10,7 +10,8 @@ body {
   padding-left: 60px;
   font: 14px 'Roboto', Helvetica, Arial, sans-serif;
   min-height: 640px;
-  background: #f1f1f1; }
+  background: #f1f1f1;
+  overflow-y: hidden; }
 
 *:focus {
   outline: 0; }
@@ -204,7 +205,8 @@ a {
     padding-left: 40px;
     padding-right: 40px;
     border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    background: #fff; }
   #info_window .datasets {
     margin-top: 20px; }
   #info_window .created_date {
@@ -214,7 +216,7 @@ a {
   #info_window .title {
     font-size: 30px;
     font-weight: 100;
-    margin-top: 20px; }
+    padding-top: 20px; }
     #info_window .title a {
       color: #484848;
       text-decoration: none; }
@@ -394,3 +396,6 @@ a {
 
 #add_data, #add_project, #add_problem {
   display: none; }
+
+.visualization {
+  position: fixed; }

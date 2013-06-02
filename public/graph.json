@@ -7,7 +7,7 @@
     {
      "name": "projects",
      "children": [
-      {"name": "AgglomerativeCluster", "size": 3938, "classname":"project"},
+      {"name": "AgglomerativeCluster", "size": 3938, "classname":"project","index":1},
       {"name": "CommunityStructure", "size": 3812, "classname":"project"},
       {"name": "HierarchicalCluster", "size": 6714, "classname":"project"},
       {"name": "MergeEdge", "size": 743, "classname":"project"}
@@ -42,7 +42,7 @@
     {
      "name": "problems",
      "children": [
-      {"name": "BetweennessCentrality", "size": 3534, "classname":"problem"},
+      {"name": "BetweennessCentrality", "size": 3534, "classname":"problem","index":1},
       {"name": "LinkDistance", "size": 5731, "classname":"problem"},
       {"name": "MaxFlowMinCut", "size": 7840, "classname":"problem"},
       {"name": "ShortestPaths", "size": 5914, "classname":"problem"},
@@ -68,7 +68,7 @@
     {
      "name": "problems",
      "children": [
-      {"name": "BetweennessCentrality", "size": 3534, "classname":"problem"},
+      {"name": "BetweennessCentrality", "size": 3534, "classname":"problem","index":1},
       {"name": "LinkDistance", "size": 5731, "classname":"problem"},
       {"name": "MaxFlowMinCut", "size": 7840, "classname":"problem"},
       {"name": "ShortestPaths", "size": 5914, "classname":"problem"},
