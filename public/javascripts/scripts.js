@@ -26,7 +26,7 @@ $("#search_close").click(function(){
 
 $("#info_window .close_btn").click(function(){
     if (parseInt($("#info_window").css("right")) == 0){
-        $("#info_window").animate({"right":"-585px"});
+        $("#info_window").animate({"right":"-524px"});
     } else {
         $("#info_window").animate({"right":"0px"});
     }
