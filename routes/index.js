@@ -15,7 +15,7 @@ exports.index = function (req, res) {
 };
 
 exports.toc = function (req, res) {
-    res.render('index', { title: 'Terms of Service' });
+    res.render('toc', { title: 'Terms of Service' });
 };
 
 exports.random = function (req, res) {
@@ -37,14 +37,11 @@ exports.datasets = function(req, res){
     ],
     // optional callback
     function(err, results){
-        res.render('list_view', results[0]);
+        res.render('list_view', {dataList : results[0], data : true});
     });
 };
 
-exports.datasetsAdd = function (req, res) {
-    //var dsQuery = 'INSERT INTO datasets ()';
-    res.render('add_view', { title: 'Add a Dataset', data : true });
-};
+
 
 exports.datasetSingle = function(req, res){
     var dataset = req.params.dataset;
@@ -58,7 +55,7 @@ exports.datasetSingle = function(req, res){
         res.render('content_view', results[0]);
     });
 };
-//Datasets end
+
 
 
 //Projects start
@@ -71,13 +68,9 @@ exports.project = function (req, res) {
 
         // optional callback
         function(err, results){
-            res.render('list_view', results[0]);
+            res.render('list_view', {projectList : results[0], project : true});
         });
 
-};
-
-exports.projectAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Projects', project : true });
 };
 
 exports.projectSingle = function (req, res) {
@@ -106,13 +99,11 @@ exports.problem = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.render('list_view', results[0]);
+            res.render('list_view', {problemList : results[0], problem : true});
         });
 };
 
-exports.problemAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Problem', problem : true });
-};
+
 
 exports.problemSingle = function (req, res) {
     var problem = req.params.problem;
@@ -144,7 +135,7 @@ function removeKeys( pObj )
 
 function getDataSet( callback, id )
 {
-    var query = 'SELECT datasets.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, projects.project_id, projects.name AS project_name, projects.description AS project_description, problems.problem_id, problems.name AS problem_name, problems.description AS problem_description FROM datasets LEFT JOIN users ON datasets.contributer_id = users.user_id LEFT JOIN creators ON datasets.creator_id = creators.creator_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON datasets_to_api_types.api_type_id = datasets_to_api_types.api_type_id LEFT JOIN projects_to_datasets ON projects_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN projects ON projects.project_id = projects_to_datasets.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN problems ON problems.problem_id = problems_to_datasets.problem_id';
+    var query = 'SELECT datasets.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, projects.project_id, projects.name AS project_name, projects.description AS project_description, problems.problem_id, problems.name AS problem_name, problems.description AS problem_description FROM datasets LEFT JOIN users ON datasets.contributer_id = users.user_id LEFT JOIN creators ON datasets.creator_id = creators.creator_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON datasets_to_api_types.api_type_id = api_types.api_type_id LEFT JOIN projects_to_datasets ON projects_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN projects ON projects.project_id = projects_to_datasets.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN problems ON problems.problem_id = problems_to_datasets.problem_id';
     if( id !== undefined ) query += ' WHERE datasets.dataset_id = '+ id;
 
     connection.query(query, function(err, rows, fields) {
@@ -311,4 +302,3 @@ function getProblems( callback, id )
         callback( null, removeKeys(holderObj));
     });
 }
-
