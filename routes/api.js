@@ -16,13 +16,16 @@ exports.datasets = function(req, res){
 
     async.series([
         function(callback){
+            getDataSet(callback, undefined);
+        },
+        function(callback){
             getDataSet(callback, undefined, true);
         }
     ],
-        // optional callback
-        function(err, results){
-            res.send(results[0]);
-        });
+    function(err, results){
+
+        res.send({"data":results[0], "dv":results[1]});
+    });
 };
 
 exports.datasetsAdd = function (req, res) {
@@ -155,21 +158,19 @@ function getDataSet( callback, id, forDV )
             holderObj[key].problems = removeKeys(holderObj[key].problems);
         }
 
-        if( false )
+        if( forDV )
         {
             var keyless = removeKeys(holderObj);
             var dvObj = {'name': 'datasets', 'size':5000, 'classname':'start', 'children':[]};
 
             for(var key in holderObj) {
-
-                console.log(holderObj[key]);
                 var problemChild = {"name":"problems", "children":[]};
                 for(var problemKey = 0; problemKey < holderObj[key].problems.length; problemKey++)
                 {
                     problemChild.children.push( {"name": holderObj[key].problems[problemKey].name, "size": ((holderObj[key].problems[problemKey].votes + 1) * 1000), "classname":"problem"} );
                 }
                 var projectChild = {"name":"projects", "children":[]};
-                for(var projectKey = 0; projectKey <  holderObj[key].projects.length; projectKey)
+                for(var projectKey = 0; projectKey <  holderObj[key].projects.length; projectKey++)
                 {
                     projectChild.children.push( {"name": holderObj[key].projects[projectKey].name, "size": ((holderObj[key].projects[projectKey].votes + 1) * 1000), "classname":"project"} );
                 }
@@ -248,7 +249,7 @@ function getProjects( callback, id )
 
 function getProblems( callback, id )
 {
-    var query = 'SELECT problems.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, datasets.dataset_id, datasets.name AS dataset_name, datasets.description AS dataset_description, projects.project_id, projects.name AS project_name, projects.description AS project_description FROM problems LEFT JOIN problems_to_projects ON problems.problem_id = problems_to_projects.problem_id LEFT JOIN projects ON problems_to_projects.project_id = projects.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.problem_id = problems.problem_id LEFT JOIN datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON api_types.api_type_id = datasets_to_api_types.api_type_id LEFT JOIN users ON projects.contributer_id = users.user_id LEFT JOIN creators ON projects.creator_id = creators.creator_id';
+    var query = 'SELECT problems.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, datasets.dataset_id, datasets.name AS dataset_name, datasets.description AS dataset_description, projects.project_id, projects.name AS project_name, projects.description AS project_description, projects.votes as project_votes, problems.votes AS problem_votes, datasets.votes AS dataset_votes FROM problems LEFT JOIN problems_to_projects ON problems.problem_id = problems_to_projects.problem_id LEFT JOIN projects ON problems_to_projects.project_id = projects.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.problem_id = problems.problem_id LEFT JOIN datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON api_types.api_type_id = datasets_to_api_types.api_type_id LEFT JOIN users ON projects.contributer_id = users.user_id LEFT JOIN creators ON projects.creator_id = creators.creator_id';
     if( id !== undefined ) query += ' WHERE problems.problem_id = '+ id;
 
     connection.query(query, function(err, rows, fields) {
@@ -306,7 +307,7 @@ function getProblems( callback, id )
 }
 
 exports.problemAdd = function (req, res) {
-    var problem = req.params;
+    var problem = req.body;
     var problem_id;
     var creator_id;
     async.series([
@@ -464,7 +465,7 @@ exports.upvote = function(req, res){
 };
 
 exports.projectAdd = function (req, res) {
-    var project = req.params;
+    var project = req.body;
     var project_id;
     var creator_id;
     async.series([
