@@ -1,20 +1,20 @@
 var mysql      = require('mysql'),
     async      = require('async');
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'api',
-    password : 'meowmix',
+    host: 'localhost',
+    user: 'api',
+    password: 'meowmix',
     database: 'api_repo'
 });
 
 connection.connect();
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Index' });
+exports.index = function (req, res) {
+    res.render('index', { title: 'Index' });
 };
 
-exports.random = function(req, res){
-  res.render('random', { title: 'Random' });
+exports.random = function (req, res) {
+    res.render('random', { title: 'Random' });
 };
 
 //Data sets start
@@ -22,8 +22,9 @@ exports.datasets = function(req, res){
     getDataSet( res );
 };
 
-exports.datasetsAdd = function(req, res){
-    res.render('index', { title: 'Add a Datasets' });
+
+exports.datasetsAdd = function (req, res) {
+    res.render('add_view', { title: 'Add a Datasets' });
 };
 
 exports.datasetSingle = function(req, res){
@@ -34,35 +35,43 @@ exports.datasetSingle = function(req, res){
 //Datasets end
 
 
-
 //Projects start
-exports.project = function(req, res){
-    res.render('index', { title: 'Projects' });
+exports.project = function (req, res) {
+
+    res.render('list_view', { title: 'Projects' });
+
 };
-exports.projectAdd = function(req, res){
-    res.render('index', { title: 'Add a Projects' });
+
+exports.projectAdd = function (req, res) {
+    res.render('add_view', { title: 'Add a Projects', project : true });
 };
-exports.projectSingle = function(req, res){
+
+exports.projectSingle = function (req, res) {
     var project = req.params.project;
-    res.render('index', { title: 'Single Projects : '+project });
+    res.render('content_project_view', { title: 'Single Projects : '+project });
 };
 //projects end
 
 
-
 //problem start
-exports.problem = function(req, res){
-    res.render('index', { title: 'Problems' });
+exports.problem = function (req, res) {
+    res.render('list_view', { title: 'Problems' });
 };
-exports.problemAdd = function(req, res){
-    res.render('index', { title: 'Add a Problem' });
+
+exports.problemAdd = function (req, res) {
+    res.render('add_view', { title: 'Add a Problem', problem : true });
 };
-exports.problemSingle = function(req, res){
+
+exports.problemSingle = function (req, res) {
     var problem = req.params.problem;
-    res.render('index', { title: 'Single Problems :'+problem });
+    res.render('content_view', { title: 'Single Problems :' + problem });
 };
 //problem end
 
+exports.search = function (req, res) {
+    var keyword = req.params.search;
+    res.render('search_view', {title: 'Search Results for ' + keyword });
+}
 
 function removeKeys( pObj )
 {

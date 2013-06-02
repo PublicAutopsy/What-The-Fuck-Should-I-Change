@@ -1,0 +1,67 @@
+
+
+{{>header}}
+
+
+	<section id="content">
+	<div id="iframe_container">
+		<iframe src="http://www.census.gov/dataviz/visualizations/039/" width="100%" height="100%" border="0"></iframe>
+	</div>
+
+	<div id="info_window">
+		<a href='#' class="close_btn">close</a>
+		<div class="title"><a href="/projects/14566">Title</a></div>
+		<div class="contributor">Contributor</div>
+		<div class="creator">Creator</div>
+		<div class="created_date">Created Date</div>
+		<div class="submitted_date">Submitted Date</div>
+		<div class="timespan">Timespan</div>
+		<div class="tags">Tags</div>
+		<div class="type">Type</div>
+		<div class="location">Location</div>
+		<div class="description">Description</div>
+		<div class="category">Category</div>
+		<div class="votes"> <a href="#">Vote</a> | Vote Count</div>
+
+		
+
+		<!-- START only visible for projects -->
+		<div class="project_link">Project Link</div>
+		<div class="repository_link">Repository Link</div>
+		<div class="project_status">Project Status</div>
+		<!-- END only visible for projects -->
+
+		<!-- START related projects module -->
+		<div class="related_projects">
+			<div class="container">
+				<a href="/projects/221352">Project Title</a>
+				<a href="/projects/221352">Project Title</a>
+			</div>
+		</div>
+		<!-- END related projects module -->
+
+		<!-- START related datasets module -->
+		<div class="related_projects">
+			<div class="container">
+				<a href="/data/221352">Dataset Title</a>
+				<a href="/data/221352">Dataset Title</a>
+			</div>
+		</div>
+		<!-- END related datasets module -->
+
+		<!-- START related problems module -->
+		<div class="related_projects">
+			<div class="container">
+				<a href="/problems/221352">Problem Title</a>
+				<a href="/problems/221352">Problem Title</a>
+			</div>
+		</div>
+		<!-- END related problems module -->
+
+
+	</div>
+
+	</section>
+
+
+{{>footer}}

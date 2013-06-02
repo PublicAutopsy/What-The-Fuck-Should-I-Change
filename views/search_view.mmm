@@ -1,0 +1,18 @@
+
+
+{{>header}}
+
+
+	<section id="search">
+
+	Search results
+
+		<div class="list_view">
+			{{>list_item_view}}
+
+		</div>
+
+	</section>
+
+
+{{>footer}}

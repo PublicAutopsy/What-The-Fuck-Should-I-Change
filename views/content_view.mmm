@@ -5,9 +5,9 @@
 
 	<section id="body">
 
-		Uber duper random
+	Content page content
 
-	</section>	
-	
+	</section>
+
 
 {{>footer}}

@@ -26,9 +26,9 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/random', routes.random);
 
-app.get('/datasets', routes.datasets);
-app.get('/datasets/add', routes.datasetsAdd);
-app.get('/dataset/:dataset', routes.datasetSingle);
+app.get('/data', routes.datasets);
+app.get('/data/add', routes.datasetsAdd);
+app.get('/data/:dataset', routes.datasetSingle);
 
 app.get('/projects', routes.project );
 app.get('/projects/add', routes.projectAdd );
@@ -38,15 +38,22 @@ app.get('/problems', routes.problem);
 app.get('/problems/add', routes.problemAdd);
 app.get('/problems/:problem', routes.problemSingle);
 
+app.get('/search/:keyword', routes.search);
+
+
 // routes/user.js
 app.get('/user/signup', user.signup);
 app.get('/user/login', user.login);
 app.get('/user/:username', user.user);
 
+
+
 // routes/api.js
 app.get('/api/projects', api.projects);
 app.get('/api/problems', api.problems);
 app.get('/api/datasets', api.datasets);
+
+
 
 
 

@@ -5,7 +5,10 @@
 
 	<section id="body">
 
-	Homepage content
+		<div class="list_view">
+			{{>list_item_view}}
+
+		</div>
 
 	</section>
 
