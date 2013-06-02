@@ -60,10 +60,15 @@ $("#data_submit_btn").click(function(){
 		formData["problems"].push(item);
 	});
 
-	//console.log(formData);
-	//console.log(JSON.stringify(formData));
-
-	$.post('/api/data/add', formData);
+    $.ajax({
+        type: "POST",
+        url: "/api/data/add",
+        data: formData,
+        success: function()
+        {
+            window.location = "/data/"
+        }
+    })
 });
 
 $("#project_submit_btn").click(function(){
@@ -89,10 +94,16 @@ $("#project_submit_btn").click(function(){
 		formData["problems"].push(item);
 	});
 
-	//console.log(formData);
-	//console.log(JSON.stringify(formData));
+    $.ajax({
+        type: "POST",
+        url: "/api/projects/add",
+        data: formData,
+        success: function()
+        {
+            window.location = "/problems/"
+        }
+    })
 
-	$.post('/api/projects/add', formData);
 });
 
 
@@ -110,12 +121,16 @@ $("#problem_submit_btn").click(function(){
 		item["dataset_id"]=$(target).attr("id");
 		formData["datasets"].push(item);
 	});
-	
 
-	//console.log(formData);
-	//console.log(JSON.stringify(formData));
-
-	$.post('/api/problems/add', formData);
+    $.ajax({
+        type: "POST",
+        url: "/api/problems/add",
+        data: formData,
+        success: function()
+        {
+            window.location = "/problems/"
+        }
+    })
 });
 
 var dataObj;
