@@ -19,7 +19,42 @@ exports.toc = function (req, res) {
 };
 
 exports.random = function (req, res) {
-    res.render('random', { title: 'Random' });
+
+    var problem;
+    var dataset;
+    async.series([
+        function(callback){
+            var query = "SELECT problems.problem_id, problems.name FROM problems INNER JOIN problems_to_datasets ON problems_to_datasets.problem_id = problems.problem_id ORDER BY RAND() LIMIT 0,1";
+            connection.query(query, function(err, rows, fields) {
+                if( err )
+                {
+                    console.log("error: " + err);
+                    res.end();
+                }
+                else
+                {
+                    problem = {"problem_id": rows[0].problem_id, "name":rows[0].name};
+                }
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var query2 = "SELECT datasets.dataset_id, datasets.name FROM datasets LEFT JOIN problems_to_datasets ON problems_to_datasets.dataset_id = datasets.dataset_id WHERE problems_to_datasets.problem_id = " + problem.problem_id + " ORDER BY RAND() LIMIT 0,1";
+            connection.query(query2, function(err, rows, fields) {
+                //if( err ) console.log("error: " + err);
+
+                dataset = {"dataset_id": rows[0].dataset_id, "name": rows[0].name};
+            })
+
+            callback(null);
+        }
+    ],
+    // optional callback
+    function(err, results){
+        console.log('render random');
+        res.render('random', { title: 'Random', "problem":problem, "dataset":dataset });
+    });
 };
 
 exports.add = function (req, res) {
