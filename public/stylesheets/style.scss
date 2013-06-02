@@ -1,15 +1,17 @@
 html, body{
   padding: 0px;
   margin: 0px;
+  width: 100%;
+  height: 100%;
   *{
     box-sizing: border-box;
   }
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  min-height: 550px;
+  padding-left: 60px;
+  font: 14px 'Roboto', Helvetica, Arial, sans-serif;
+  min-height: 640px;
 }
 
 a {
@@ -17,7 +19,7 @@ a {
 }
 
 #header {
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:0;
 	bottom:0;
@@ -29,7 +31,7 @@ a {
       width:100%;
       height:100%;
       position: relative;
-      min-height: 520px;
+      min-height: 640px;
       #logo_container{
         width:100%;
         height:110px;
@@ -37,16 +39,16 @@ a {
         #logo{
           width:26px;
           height:87px;
-          margin:5px auto;
+          margin:20px auto;
           display: block;
         }
       }
       #menu_container{
         width: 100%;
-        height: 320px;
+        height: 400px;
         position:absolute;
         top:50%;
-        margin-top: -160px;
+        margin-top: -200px;
         z-index: 20;
         a{
           display: block;
@@ -55,6 +57,9 @@ a {
           background:#f0f0f0;
           border-bottom:1px solid #f7f7f7;
           border-top:1px solid #cdcdcd;
+          &.selected{
+            border-right: 4px solid;
+          }
           &:last-child{
             border-bottom:1px solid #cdcdcd;
           }
@@ -72,6 +77,10 @@ a {
               background: url("/images/btn_search.png") left center no-repeat;
             }
           }
+
+          &#search.selected{
+            border-right-color: #f4b400;
+          }
           &#search:hover, &#search.selected{
             .icon{
               background: url("/images/btn_search.png") left center no-repeat;
@@ -88,6 +97,9 @@ a {
               background: url("/images/btn_data.png") left center no-repeat;
             }
           }
+          &#data.selected{
+            border-right-color: #4285f4;
+          }
 
           &#problems .icon{
             background: url("/images/btn_problems.png") right center no-repeat;
@@ -100,6 +112,9 @@ a {
               margin-left: 14px;
             }
           }
+          &#problems.selected{
+            border-right-color: #db4437;
+          }
 
           &#projects .icon{
             background: url("/images/btn_projects.png") right center no-repeat;
@@ -111,14 +126,32 @@ a {
               background: url("/images/btn_projects.png") left center no-repeat;
             }
           }
+          &#projects.selected{
+            border-right-color: #0f9d58;
+          }
+
+          &#add .icon{
+            background: url("/images/btn_projects.png") right center no-repeat;
+            width: 27px;
+            margin-left: 16px;
+          }
+          &#add:hover, &#add.selected{
+            .icon{
+              background: url("/images/btn_projects.png") left center no-repeat;
+            }
+          }
+          &#add.selected{
+            border-right-color: #262626;
+          }
+
         }
       }
       #rollovers{
         width: 100%;
-        height: 320px;
+        height: 400px;
         position:absolute;
         top:50%;
-        margin-top: -160px;
+        margin-top: -200px;
         z-index: 10;
         .rollover{
           position: relative;
@@ -142,6 +175,9 @@ a {
           &#projects_rollover{
             background: #0f9d58;
           }
+          &#add_rollover{
+            background: #262626;
+          }
         }
       }
     }
@@ -153,4 +189,24 @@ a {
 	left:60px;
 	right:0;
 	bottom:0;
+}
+
+#body{
+  width: 100%;
+  height: 100%;
+  .page{
+    width:100%;
+    height:100%;
+    .title{
+      position:relative;
+      z-index: 1;
+      height:110px;
+      background: rgba(255,255,255, .6);
+      text-align: center;
+      font-size: 36px;
+      font-weight: 100;
+      font-style: italic;
+      padding-top: 25px;
+    }
+  }
 }

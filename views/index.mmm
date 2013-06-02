@@ -5,9 +5,40 @@
 
 	<section id="body">
 
-	{{title}}
+
+        <div id="random" class="page">
+            <div class="title">Discover Technology For Change</div>
+            <div class="content"></div>
+        </div>
+        <div class="page">
+            <div class="content"></div>
+        </div>
+        <div class="page">
+            <div class="content"></div>
+        </div>
+        <div class="page">
+            <div class="content"></div>
+        </div>
+        <div class="page">
+            <div class="content"></div>
+        </div>
+        <div class="page">
+            <div class="content"></div>
+        </div>
+        <div class="page">
+            <div class="content"></div>
+        </div>
 
 	</section>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var imageURL = ["/images/rand/1.jpg","/images/rand/2.jpg","/images/rand/3.jpg","/images/rand/4.jpg","/images/rand/5.jpg"]
+            var rand = Math.floor(Math.random() * 5);
+            console.log(imageURL[rand]);
+            $("#random").css({"background": "url("+imageURL[rand]+") center center no-repeat", "backgroundPosition": "cover"});
+
+        });
+    </script>
 
 {{>footer}}
