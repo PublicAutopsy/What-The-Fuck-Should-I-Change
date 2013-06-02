@@ -85,7 +85,7 @@ $("#project_submit_btn").click(function(){
 	formData["repository_url"]=$("#project_form #repositoryUrl").val();
 	formData["url"]=$("#project_form #informationUrl").val();
 	formData["datasets"]= new Array();
-	$("#project_form #problems ul li").each(function(i,target){
+	$("#project_form #datasets ul li").each(function(i,target){
 		var item = Object();
 		item["dataset_id"]=$(target).attr("id");
 		formData["datasets"].push(item);
