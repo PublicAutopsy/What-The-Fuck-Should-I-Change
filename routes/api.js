@@ -155,7 +155,7 @@ function getDataSet( callback, id, forDV )
             holderObj[key].problems = removeKeys(holderObj[key].problems);
         }
 
-        if( forDV )
+        if( false )
         {
             var keyless = removeKeys(holderObj);
             var dvObj = {'name': 'datasets', 'size':5000, 'classname':'start', 'children':[]};
@@ -369,9 +369,7 @@ exports.problemAdd = function (req, res) {
 };
 
 exports.datasetsAdd = function (req, res) {
-    req.params = {"contributer":"asdf","creator":"sadf","description":"asdfasdfsa","location":"asfadf","name":"asdf","url":"asdfasdfs","api_types":[{"api_type_id":"1"}],"problems":[{"problem_id":0},{"problem_id":0},{"problem_id":0}]};
-
-    var dataset = req.params;
+    var dataset = req.body;
     var dataset_id;
     var creator_id;
     async.series([
@@ -407,20 +405,7 @@ exports.datasetsAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("UPDATE datasets SET creator_id = " + creator_id, function(err, result) {
-                if( err ) console.log("error: " + err);
-
-                callback(null, null);
-            })
-        },
-        function(callback){
-            var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
-            for(var i = 0; i < dataset.problems.length; i++ )
-            {
-                insertQuery += "(" + dataset.problems[i].problem_id + "," + dataset_id + ")";
-                if( i < dataset.problems.length - 1 ) insertQuery += ",";
-            }
-            connection.query(insertQuery, function(err, result) {
+            connection.query("UPDATE datasets SET creator_id = " + creator_id + " WHERE dataset_id = " + dataset_id, function(err, result) {
                 if( err ) console.log("error: " + err);
 
                 callback(null, null);
@@ -515,7 +500,7 @@ exports.projectAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("UPDATE projects SET creator_id = " + creator_id, function(err, result) {
+            connection.query("UPDATE projects SET creator_id = " + creator_id + " WHERE project_id = " + project_id, function(err, result) {
                 if( err ) console.log("error: " + err);
 
                 callback(null, null);

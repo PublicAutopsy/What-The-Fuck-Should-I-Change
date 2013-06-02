@@ -7,6 +7,36 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,500italic,500,400italic,100italic,100' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
      <script src="/js/jquery.json-2.4.min.js"></script>
+     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.27.2"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.geom.js?1.27.2"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?1.27.2"></script>
+    <style type="text/css">
+
+
+.node text {
+  color: white;
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+line.link {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1.5px;
+}
+
+.node circle {
+cursor: pointer;
+}
+
+
+.centertext {
+  color: white;
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+    </style>
 </head>
 <body>
 <div id="wrapper">
