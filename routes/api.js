@@ -336,7 +336,7 @@ exports.problemAdd = function (req, res) {
 
                 if( rows.length < 1 )
                 {
-                    connection.query("INSERT INTO creators (name) VALUE ('" + connection.escape(problem.creator) + "')", function(err, result) {
+                    connection.query("INSERT INTO creators (name) VALUE (" + connection.escape(problem.creator) + ")", function(err, result) {
                         if( err ) console.log("error: " + err);
 
                         creator_id = result.insertId;
@@ -351,7 +351,7 @@ exports.problemAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("UPDATE problems SET creator_id = " + connection.escape(creator_id), function(err, result) {
+            connection.query("UPDATE problems SET creator_id = " + connection.escape(creator_id) + " WHERE problem_id = " + connection.escape(problem_id), function(err, result) {
                 if( err ) console.log("error: " + err);
 
                 callback(null, null);
