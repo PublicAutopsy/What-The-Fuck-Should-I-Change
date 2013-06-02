@@ -5,9 +5,9 @@
 
 	<section id="body">
 
-		<div id="list_view">
+		<div class="list_view">
+			{{>list_item_view}}
 
-			
 		</div>
 
 	</section>
