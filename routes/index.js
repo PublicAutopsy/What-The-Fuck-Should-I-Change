@@ -89,6 +89,8 @@ function getDataSet( res, id )
         if( err ) console.log('error: ' + err);
 
         var holderObj = {};
+
+        if( rows === undefined ) res.end( new Array() );
         for( var x = 0; x < rows.length; x++ )
         {
             if( holderObj[rows[x].dataset_id] == null )
@@ -139,6 +141,66 @@ function getProjects( res, id )
         if( err ) console.log('error: ' + err);
 
         var holderObj = {};
+        if( rows === undefined )res.end( new Array() );
+        for( var x = 0; x < rows.length; x++ )
+        {
+            if( holderObj[rows[x].project_id] == null )
+            {
+                holderObj[rows[x].project_id] = rows[x];
+                holderObj[rows[x].project_id].datasets = {};
+                holderObj[rows[x].project_id].problems = {};
+
+                if( rows[x].dataset_id != null )
+                {
+                    holderObj[rows[x].project_id].datasets[rows[x].dataset_id] = {"dataset_id": rows[x].dataset_id, "name": rows[x].name, "description": rows[x].dataset_description, "api_types":{} };
+                    if( rows[x].api_type_id != null ) holderObj[rows[x].project_id].datasets[rows[x].dataset_id].api_types[rows[x].api_type_id] = {"api_type_id": rows[x].api_type_id, "name": rows[x].apiname};
+                }
+                if( rows[x].problem_name != null ) holderObj[rows[x].project_id].problems[rows[x].problem_id] = {"problem_id": rows[x].problem_id, "name": rows[x].problem_name, "descritiption": rows[x].problem_description};
+
+                delete holderObj[rows[x].project_id].api_type_id;
+                delete holderObj[rows[x].project_id].apiname;
+                delete holderObj[rows[x].project_id].problem_id;
+                delete holderObj[rows[x].project_id].problem_name;
+                delete holderObj[rows[x].project_id].problem_description;
+                delete holderObj[rows[x].project_id].dataset_id;
+                delete holderObj[rows[x].project_id].dataset_name;
+                delete holderObj[rows[x].project_id].dataset_description;
+            }
+            else
+            {
+                if( rows[x].dataset_id != null )
+                {
+                    holderObj[rows[x].project_id].datasets[rows[x].dataset_id] = {"dataset_id": rows[x].dataset_id, "name": rows[x].name, "description": rows[x].dataset_description, "api_types":{} };
+                    if( rows[x].api_type_id != null ) holderObj[rows[x].project_id].datasets[rows[x].dataset_id].api_types[rows[x].api_type_id] = {"api_type_id": rows[x].api_type_id, "name": rows[x].apiname};
+                }
+                if( rows[x].problem_name != null ) holderObj[rows[x].project_id].problems[rows[x].problem_id] = {"problem_id": rows[x].problem_id, "name": rows[x].problem_name, "descritiption": rows[x].problem_description};
+            }
+        }
+
+        for(var key in holderObj) {
+            holderObj[key].datasets = removeKeys(holderObj[key].datasets);
+
+            for(var key2 in holderObj[key].datasets) {
+                holderObj[key].datasets[key2].api_types = removeKeys(holderObj[key].datasets[key2].api_types);
+            }
+
+            holderObj[key].problems = removeKeys(holderObj[key].problems);
+        }
+
+        res.send(removeKeys(holderObj));
+    });
+}
+
+function getProblems( res, id )
+{
+    var query = 'SELECT projects.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, datasets.dataset_id, datasets.name AS dataset_name, datasets.description AS dataset_description, problems.problem_id, problems.name AS problem_name, problems.description AS problem_descrip FROM projects LEFT JOIN projects_to_datasets ON projects.project_id = projects_to_datasets.project_id LEFT JOIN datasets ON projects_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON datasets_to_api_types.api_type_id = datasets_to_api_types.api_type_id LEFT JOIN users ON projects.contributer_id = users.user_id LEFT JOIN creators ON projects.creator_id = creators.creator_id LEFT JOIN problems_to_projects ON problems_to_projects.project_id = projects.project_id LEFT JOIN problems ON problems.problem_id = problems_to_projects.problem_id';
+    if( id !== undefined ) query += ' WHERE projects.project_id = '+ id;
+
+    connection.query(query, function(err, rows, fields) {
+        if( err ) console.log('error: ' + err);
+
+        var holderObj = {};
+        if( rows === undefined )res.end( new Array() );
         for( var x = 0; x < rows.length; x++ )
         {
             if( holderObj[rows[x].project_id] == null )
