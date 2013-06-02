@@ -50,7 +50,7 @@ exports.projectAdd = function(req, res){
 };
 exports.projectSingle = function(req, res){
     var project = req.params.project;
-    res.render('content_view', { title: 'Single Projects : '+project });
+    res.render('content_project_view', { title: 'Single Projects : '+project });
 };
 //projects end
 
