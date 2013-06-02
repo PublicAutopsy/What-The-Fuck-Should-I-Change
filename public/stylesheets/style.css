@@ -240,7 +240,14 @@ a {
   #content .page {
     width: 100%;
     height: 100%;
-    color: #fff; }
+    color: #fff;
+    position: relative; }
+    #content .page .clickThrough {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      margin-left: -84px;
+      display: block; }
     #content .page#first {
       background: url("/images/rand/4.jpg") center center no-repeat;
       background-size: cover; }
