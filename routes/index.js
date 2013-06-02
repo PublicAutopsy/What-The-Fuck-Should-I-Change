@@ -42,8 +42,92 @@ exports.datasets = function(req, res){
 };
 
 exports.datasetsAdd = function (req, res) {
-    //var dsQuery = 'INSERT INTO datasets ()';
-    res.render('add_view', { title: 'Add a Dataset', data : true });
+    var dataset = req.params;
+    var dataset_id;
+    var creator_id;
+    async.series([
+        function(callback){
+            var dsAddQuery = "INSERT INTO datasets (contributer_id, description, location, name, url) ";
+            dsAddQuery += "VALUES ('" + dataset.contributer_id + "','" + dataset.description + "','" + dataset.location + "','" + dataset.name + "','" + dataset.url + "')";
+            dsAddQuery = dsAddQuery.replace("'null'", "NULL");
+            connection.query(dsAddQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                dataset_id = result.insertId;
+                callback(null, null);
+            })
+        },
+        function(callback){
+            connection.query("SELECT creator_id FROM creators WHERE name = '" + dataset.creator + "'", function(err, rows, fields) {
+                if( err ) console.log("error: " + err);
+
+                if( rows.length < 1 )
+                {
+                    connection.query("INSERT INTO creators (name) VALUE ('" + project.creator + "')", function(err, result) {
+                        if( err ) console.log("error: " + err);
+
+                        creator_id = result.insertId;
+                        callback(null, null);
+                    })
+                }
+                else
+                {
+                    creator_id = rows[0].creator_id;
+                    callback(null, null);
+                }
+            })
+        },
+        function(callback){
+            connection.query("UPDATE datasets SET creator_id = " + creator_id, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
+            for(var i = 0; i < dataset.problems.length; i++ )
+            {
+                insertQuery += "(" + dataset.problems[i].problem_id + "," + dataset_id + ")";
+                if( i < dataset.problems.length - 1 ) insertQuery += ",";
+            }
+            connection.query(insertQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
+            for(var i = 0; i < dataset.problems.length; i++ )
+            {
+                insertQuery += "(" + dataset.problems[i].problem_id + "," + dataset_id + ")";
+                if( i < dataset.problems.length - 1 ) insertQuery += ",";
+            }
+            connection.query(insertQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var insertQuery = "INSERT INTO datasets_to_api_types (dataset_id, api_type_id) VALUES ";
+            for(var i = 0; i < dataset.api_types.length; i++ )
+            {
+                insertQuery += "(" + dataset_id + "," + dataset.api_types[i].api_type_id + ")";
+                if( i < dataset.api_types.length - 1 ) insertQuery += ",";
+            }
+            connection.query(insertQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        }
+    ],
+    // optional callback
+    function(err, results){
+        res.send(results);
+    });
 };
 
 exports.datasetSingle = function(req, res){
@@ -58,8 +142,19 @@ exports.datasetSingle = function(req, res){
         res.render('content_view', results[0]);
     });
 };
-//Datasets end
 
+exports.upvote = function(req, res){
+    req.params = {'type': 'projects', 'id': 1};
+
+    var type = req.params.type;
+    var id = req.params.id;
+
+    connection.query("UPDATE " + type + " SET votes = votes + 1 WHERE '" + type.substr(0, type.length-1) + "_id' = " + id, function(err, result) {
+        if( err ) console.log("error: " + err);
+
+        res.send({'result': 1});
+    })
+};
 
 //Projects start
 exports.project = function (req, res) {
@@ -77,7 +172,80 @@ exports.project = function (req, res) {
 };
 
 exports.projectAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Projects', project : true });
+    var project = req.params;
+    var project_id;
+    var creator_id;
+    async.series([
+        function(callback){
+            var dsAddQuery = "INSERT INTO projects (contributer_id, creator_id, description, iframe_url, location, name, repository_url) ";
+            dsAddQuery += "VALUE ('" + project.contributer_id + "', '" + project.creator_id + "', '" + project.description + "', '" + project.iframe_url + "', '" + project.location + "', '" + project.name + "', '" + project.repository_url + "')";
+            dsAddQuery = dsAddQuery.replace("'null'", "NULL");
+            connection.query(dsAddQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                project_id = result.insertId;
+                callback(null, null);
+            })
+        },
+        function(callback){
+            connection.query("SELECT creator_id FROM creators WHERE name = '" + project.creator + "'", function(err, rows, fields) {
+                if( err ) console.log("error: " + err);
+
+                if( rows.length < 1 )
+                {
+                    connection.query("INSERT INTO creators (name) VALUE ('" + project.creator + "')", function(err, result) {
+                        if( err ) console.log("error: " + err);
+
+                        creator_id = result.insertId;
+                        callback(null, null);
+                    })
+                }
+                else
+                {
+                    creator_id = rows[0].creator_id;
+                    callback(null, null);
+                }
+            })
+        },
+        function(callback){
+            connection.query("UPDATE projects SET creator_id = " + creator_id, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var insertQuery = "INSERT INTO problems_to_projects (problem_id, project_id) VALUES ";
+            for(var i = 0; i < project.problems.length; i++ )
+            {
+                insertQuery += "(" + project.problems[i].problem_id + "," + project_id + ")";
+                if( i < project.problems.length - 1 ) insertQuery += ",";
+            }
+            connection.query(insertQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var insertQuery = "INSERT INTO projects_to_datasets (dataset_id, project_id) VALUES ";
+            for(var i = 0; i < project.datasets.length; i++ )
+            {
+                insertQuery += "(" + project.datasets[i].dataset_id + "," + project_id + ")";
+                if( i < project.datasets.length - 1 ) insertQuery += ",";
+            }
+            connection.query(insertQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        }
+
+    ],
+        // optional callback
+        function(err, results){
+            res.send(results);
+        });
 };
 
 exports.projectSingle = function (req, res) {
@@ -111,7 +279,66 @@ exports.problem = function (req, res) {
 };
 
 exports.problemAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Problem', problem : true });
+    var problem = req.params;
+    var problem_id;
+    var creator_id;
+    async.series([
+        function(callback){
+            var dsAddQuery = "INSERT INTO problems ( contributer_id, description, location, name, url ) ";
+            dsAddQuery += "VALUES ('" + problem.contributer_id + "','" + problem.description + "','" + problem.location + "','" + problem.name + "','" + problem.url + "')";
+            dsAddQuery = dsAddQuery.replace("'null'", "NULL");
+            connection.query(dsAddQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                problem_id = result.insertId;
+                callback(null, null);
+            })
+        },
+        function(callback){
+            connection.query("SELECT creator_id FROM creators WHERE name = '" + problem.creator + "'", function(err, rows, fields) {
+                if( err ) console.log("error: " + err);
+
+                if( rows.length < 1 )
+                {
+                    connection.query("INSERT INTO creators (name) VALUE ('" + problem.creator + "')", function(err, result) {
+                        if( err ) console.log("error: " + err);
+
+                        creator_id = result.insertId;
+                        callback(null, null);
+                    })
+                }
+                else
+                {
+                    creator_id = rows[0].creator_id;
+                    callback(null, null);
+                }
+            })
+        },
+        function(callback){
+            connection.query("UPDATE problems SET creator_id = " + creator_id, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        },
+        function(callback){
+            var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
+            for(var i = 0; i < problem.datasets.length; i++ )
+            {
+                insertQuery += "(" + problem_id + "," + problem.datasets[i].dataset_id + ")";
+                if( i < problem.datasets.length - 1 ) insertQuery += ",";
+            }
+            connection.query(insertQuery, function(err, result) {
+                if( err ) console.log("error: " + err);
+
+                callback(null, null);
+            })
+        }
+    ],
+    // optional callback
+    function(err, results){
+        res.send(results);
+    });
 };
 
 exports.problemSingle = function (req, res) {
@@ -144,7 +371,7 @@ function removeKeys( pObj )
 
 function getDataSet( callback, id )
 {
-    var query = 'SELECT datasets.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, projects.project_id, projects.name AS project_name, projects.description AS project_description, problems.problem_id, problems.name AS problem_name, problems.description AS problem_description FROM datasets LEFT JOIN users ON datasets.contributer_id = users.user_id LEFT JOIN creators ON datasets.creator_id = creators.creator_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON datasets_to_api_types.api_type_id = datasets_to_api_types.api_type_id LEFT JOIN projects_to_datasets ON projects_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN projects ON projects.project_id = projects_to_datasets.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN problems ON problems.problem_id = problems_to_datasets.problem_id';
+    var query = 'SELECT datasets.*, datasets_to_api_types.api_type_id, api_types.name AS apiname, users.name AS contributer, creators.name AS creator, projects.project_id, projects.name AS project_name, projects.description AS project_description, problems.problem_id, problems.name AS problem_name, problems.description AS problem_description FROM datasets LEFT JOIN users ON datasets.contributer_id = users.user_id LEFT JOIN creators ON datasets.creator_id = creators.creator_id LEFT JOIN datasets_to_api_types ON datasets_to_api_types.dataset_id = datasets.dataset_id LEFT JOIN api_types ON datasets_to_api_types.api_type_id = api_types.api_type_id LEFT JOIN projects_to_datasets ON projects_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN projects ON projects.project_id = projects_to_datasets.project_id LEFT JOIN problems_to_datasets ON problems_to_datasets.dataset_id = datasets.dataset_id LEFT JOIN problems ON problems.problem_id = problems_to_datasets.problem_id';
     if( id !== undefined ) query += ' WHERE datasets.dataset_id = '+ id;
 
     connection.query(query, function(err, rows, fields) {
@@ -311,4 +538,3 @@ function getProblems( callback, id )
         callback( null, removeKeys(holderObj));
     });
 }
-
