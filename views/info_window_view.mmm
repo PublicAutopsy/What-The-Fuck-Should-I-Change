@@ -14,6 +14,8 @@
 
             <div class="description">{{description}}</div>
 
+            <div class="url"><a href="{{url}}">{{url}}</a></div>
+
             <div class="category">{{tags}}</div>
 
             <!-- START only visible for datasets -->
