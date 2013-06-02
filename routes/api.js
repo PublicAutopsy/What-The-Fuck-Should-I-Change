@@ -317,9 +317,16 @@ exports.problemAdd = function (req, res) {
             dsAddQuery += "VALUES ('" + problem.contributer_id + "','" + problem.description + "','" + problem.location + "','" + problem.name + "','" + problem.url + "')";
             dsAddQuery = dsAddQuery.replace("'null'", "NULL");
             connection.query(dsAddQuery, function(err, result) {
-                if( err ) console.log("error: " + err);
+                if( err )
+                {
+                    console.log("error: " + err);
+                    res.end();
+                }
+                else
+                {
+                    problem_id = result.insertId;
+                }
 
-                problem_id = result.insertId;
                 callback(null, null);
             })
         },
