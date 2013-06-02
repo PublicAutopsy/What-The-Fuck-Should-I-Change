@@ -22,6 +22,11 @@ exports.random = function (req, res) {
     res.render('random', { title: 'Random' });
 };
 
+exports.add = function (req, res) {
+    //var dsQuery = 'INSERT INTO datasets ()';
+    res.render('add_view', { title: 'Add Content', data : true });
+};
+
 //Data sets start
 exports.datasets = function(req, res){
 
@@ -101,7 +106,7 @@ exports.problem = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.send(results[0]);
+            res.render('list_view', results[0]);
         });
 };
 
@@ -118,7 +123,7 @@ exports.problemSingle = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.send(results[0]);
+            res.render('content_view', results[0]);
         });
 };
 //problem end

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,500italic,500,400italic,100italic,100' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
@@ -25,12 +26,16 @@
                 <a  id="search" href="#">
                     <span class="icon"></span>
                 </a>
+                <a {{#add}}class="selected"{{/add}} id="add" href="/add">
+                    <span class="icon"></span>
+                </a>
             </div>
             <div id="rollovers">
                 <div class="rollover" id="data_rollover">Data</div>
                 <div class="rollover" id="projects_rollover">Projects</div>
                 <div class="rollover" id="problems_rollover">Problems</div>
                 <div class="rollover" id="search_rollover">Search</div>
+                <div class="rollover" id="add_rollover">Add</div>
             </div>
 
             <!--<div id="search_container">-->

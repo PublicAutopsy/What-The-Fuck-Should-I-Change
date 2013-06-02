@@ -28,6 +28,8 @@ app.get('/policies', routes.toc);
 
 app.get('/random', routes.random);
 
+app.get('/add', routes.add);
+
 app.get('/data', routes.datasets);
 app.get('/data/add', routes.datasetsAdd);
 app.get('/data/:dataset', routes.datasetSingle);

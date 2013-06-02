@@ -1,13 +1,15 @@
 html, body {
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  width: 100%;
+  height: 100%; }
   html *, body * {
     box-sizing: border-box; }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  min-height: 550px; }
+  padding-left: 60px;
+  font: 14px 'Roboto', Helvetica, Arial, sans-serif;
+  min-height: 640px; }
 
 a {
   color: #00B7FF; }
@@ -22,7 +24,7 @@ a {
   left: 0; }
 
 #header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -34,7 +36,7 @@ a {
     width: 100%;
     height: 100%;
     position: relative;
-    min-height: 520px; }
+    min-height: 640px; }
     #header #header_wrapper #logo_container {
       width: 100%;
       height: 110px;
@@ -42,14 +44,14 @@ a {
       #header #header_wrapper #logo_container #logo {
         width: 26px;
         height: 87px;
-        margin: 5px auto;
+        margin: 20px auto;
         display: block; }
     #header #header_wrapper #menu_container {
       width: 100%;
-      height: 320px;
+      height: 400px;
       position: absolute;
       top: 50%;
-      margin-top: -160px;
+      margin-top: -200px;
       z-index: 20; }
       #header #header_wrapper #menu_container a {
         display: block;
@@ -58,6 +60,8 @@ a {
         background: #f0f0f0;
         border-bottom: 1px solid #f7f7f7;
         border-top: 1px solid #cdcdcd; }
+        #header #header_wrapper #menu_container a.selected {
+          border-right: 4px solid; }
         #header #header_wrapper #menu_container a:last-child {
           border-bottom: 1px solid #cdcdcd; }
         #header #header_wrapper #menu_container a .icon {
@@ -70,6 +74,8 @@ a {
           margin-left: 14px; }
           #header #header_wrapper #menu_container a#search .icon:hover {
             background: url("/images/btn_search.png") left center no-repeat; }
+        #header #header_wrapper #menu_container a#search.selected {
+          border-right-color: #f4b400; }
         #header #header_wrapper #menu_container a#search:hover .icon, #header #header_wrapper #menu_container a#search.selected .icon {
           background: url("/images/btn_search.png") left center no-repeat; }
         #header #header_wrapper #menu_container a#data .icon {
@@ -78,6 +84,8 @@ a {
           margin-left: 18px; }
         #header #header_wrapper #menu_container a#data:hover .icon, #header #header_wrapper #menu_container a#data.selected .icon {
           background: url("/images/btn_data.png") left center no-repeat; }
+        #header #header_wrapper #menu_container a#data.selected {
+          border-right-color: #4285f4; }
         #header #header_wrapper #menu_container a#problems .icon {
           background: url("/images/btn_problems.png") right center no-repeat;
           width: 30px;
@@ -85,18 +93,30 @@ a {
         #header #header_wrapper #menu_container a#problems:hover .icon, #header #header_wrapper #menu_container a#problems.selected .icon {
           background: url("/images/btn_problems.png") left center no-repeat;
           margin-left: 14px; }
+        #header #header_wrapper #menu_container a#problems.selected {
+          border-right-color: #db4437; }
         #header #header_wrapper #menu_container a#projects .icon {
           background: url("/images/btn_projects.png") right center no-repeat;
           width: 27px;
           margin-left: 16px; }
         #header #header_wrapper #menu_container a#projects:hover .icon, #header #header_wrapper #menu_container a#projects.selected .icon {
           background: url("/images/btn_projects.png") left center no-repeat; }
+        #header #header_wrapper #menu_container a#projects.selected {
+          border-right-color: #0f9d58; }
+        #header #header_wrapper #menu_container a#add .icon {
+          background: url("/images/btn_projects.png") right center no-repeat;
+          width: 27px;
+          margin-left: 16px; }
+        #header #header_wrapper #menu_container a#add:hover .icon, #header #header_wrapper #menu_container a#add.selected .icon {
+          background: url("/images/btn_projects.png") left center no-repeat; }
+        #header #header_wrapper #menu_container a#add.selected {
+          border-right-color: #262626; }
     #header #header_wrapper #rollovers {
       width: 100%;
-      height: 320px;
+      height: 400px;
       position: absolute;
       top: 50%;
-      margin-top: -160px;
+      margin-top: -200px;
       z-index: 10; }
       #header #header_wrapper #rollovers .rollover {
         position: relative;
@@ -116,6 +136,8 @@ a {
           background: #db4437; }
         #header #header_wrapper #rollovers .rollover#projects_rollover {
           background: #0f9d58; }
+        #header #header_wrapper #rollovers .rollover#add_rollover {
+          background: #262626; }
 
 #content {
   position: absolute;
@@ -140,4 +162,23 @@ a {
   overflow-y: scroll; }
   #info_window .close_btn {
     position: absolute;
-    left: -100px; }
+    left: -10px;
+    top: 0;
+    z-index: 1000; }
+
+#content {
+  width: 100%;
+  height: 100%; }
+  #content .page {
+    width: 100%;
+    height: 100%; }
+    #content .page .title {
+      position: relative;
+      z-index: 1;
+      height: 110px;
+      background: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      font-size: 36px;
+      font-weight: 100;
+      font-style: italic;
+      padding-top: 25px; }
