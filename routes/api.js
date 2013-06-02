@@ -486,7 +486,7 @@ exports.projectAdd = function (req, res) {
 
                 if( rows.length < 1 )
                 {
-                    connection.query("INSERT INTO creators (name) VALUE ('" + dataset.creator + "')", function(err, result) {
+                    connection.query("INSERT INTO creators (name) VALUE ('" + project.creator + "')", function(err, result) {
                         if( err ) console.log("error: " + err);
 
                         creator_id = result.insertId;
