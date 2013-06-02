@@ -317,9 +317,16 @@ exports.problemAdd = function (req, res) {
             dsAddQuery += "VALUES ('" + problem.contributer_id + "','" + problem.description + "','" + problem.location + "','" + problem.name + "','" + problem.url + "')";
             dsAddQuery = dsAddQuery.replace("'null'", "NULL");
             connection.query(dsAddQuery, function(err, result) {
-                if( err ) console.log("error: " + err);
+                if( err )
+                {
+                    console.log("error: " + err);
+                    res.end();
+                }
+                else
+                {
+                    problem_id = result.insertId;
+                }
 
-                problem_id = result.insertId;
                 callback(null, null);
             })
         },
@@ -352,6 +359,13 @@ exports.problemAdd = function (req, res) {
         },
         function(callback){
             var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
+
+            if( problem.datasets === undefined )
+            {
+                callback(null, null);
+                return;
+            }
+
             for(var i = 0; i < problem.datasets.length; i++ )
             {
                 insertQuery += "(" + problem_id + "," + problem.datasets[i].dataset_id + ")";
@@ -516,6 +530,12 @@ exports.projectAdd = function (req, res) {
         },
         function(callback){
             var insertQuery = "INSERT INTO problems_to_projects (problem_id, project_id) VALUES ";
+
+            if( project.problems === undefined )
+            {
+                callback(null, null);
+                return;
+            }
             for(var i = 0; i < project.problems.length; i++ )
             {
                 insertQuery += "(" + project.problems[i].problem_id + "," + project_id + ")";
@@ -529,6 +549,12 @@ exports.projectAdd = function (req, res) {
         },
         function(callback){
             var insertQuery = "INSERT INTO projects_to_datasets (dataset_id, project_id) VALUES ";
+
+            if( project.datasets === undefined )
+            {
+                callback(null, null);
+                return;
+            }
             for(var i = 0; i < project.datasets.length; i++ )
             {
                 insertQuery += "(" + project.datasets[i].dataset_id + "," + project_id + ")";
