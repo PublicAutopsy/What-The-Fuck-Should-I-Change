@@ -45,11 +45,9 @@
                 <ul></ul>
             </div>
 
-            <select id="problems" value="Select A Problem">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+            <select id="problems" placeholder="Select A Problem">
+                
+                
             </select>
 
             <a class="submit_btn" id="data_submit_btn" >DONE </a>
@@ -84,11 +82,8 @@
                 <ul></ul>
             </div>
 
-            <select id="dataset" value="Select A Dataset">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+            <select id="dataset" placeholder="Select A Dataset">
+               
             </select>
 
             <div class="form_list" id="problems">
@@ -96,11 +91,7 @@
                 <ul></ul>
             </div>
 
-            <select id="problems" value="Select A Problem">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+            <select id="problems" placeholder="Select A Problem">
             </select>
   
             <a class="submit_btn" id="project_submit_btn" >DONE </a>
@@ -133,11 +124,7 @@
                 <ul></ul>
             </div>
 
-            <select id="dataset" value="Select A Dataset">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+            <select id="dataset" placeholder="Select A Dataset">
             </select>
 
             <a class="submit_btn" id="problem_submit_btn" >DONE </a>
