@@ -19,10 +19,11 @@
 $("#data_form #problems").change(function(e){
 	var selectionVal = $(e.target).val();
 	var selectionText = $("#data_form #"+$(e.target).attr("id")+" option[value='"+$(e.target).val()+"']").text();
+	console.log("#data_form #"+$(e.target).attr("id")+" option[value='"+$(e.target).val()+"']");
 	$("#data_form #problems ul").append("<li id='"+selectionVal+"'>"+selectionText+"</li>")
 });
 
-$("#project_form #problems").change(function(e){
+$("#project_form #problem").change(function(e){
 	var selectionVal = $(e.target).val();
 	var selectionText = $("#project_form #"+$(e.target).attr("id")+" option[value='"+$(e.target).val()+"']").text();
 	$("#project_form #problems ul").append("<li id='"+selectionVal+"'>"+selectionText+"</li>")
@@ -59,10 +60,15 @@ $("#data_submit_btn").click(function(){
 		formData["problems"].push(item);
 	});
 
-	//console.log(formData);
-	//console.log(JSON.stringify(formData));
-
-	$.post('/api/data/add', formData);
+    $.ajax({
+        type: "POST",
+        url: "/api/data/add",
+        data: formData,
+        success: function()
+        {
+            window.location = "/data/"
+        }
+    })
 });
 
 $("#project_submit_btn").click(function(){
@@ -88,10 +94,16 @@ $("#project_submit_btn").click(function(){
 		formData["problems"].push(item);
 	});
 
-	//console.log(formData);
-	//console.log(JSON.stringify(formData));
+    $.ajax({
+        type: "POST",
+        url: "/api/projects/add",
+        data: formData,
+        success: function()
+        {
+            window.location = "/problems/"
+        }
+    })
 
-	$.post('/api/projects/add', formData);
 });
 
 
@@ -109,12 +121,16 @@ $("#problem_submit_btn").click(function(){
 		item["dataset_id"]=$(target).attr("id");
 		formData["datasets"].push(item);
 	});
-	
 
-	//console.log(formData);
-	//console.log(JSON.stringify(formData));
-
-	$.post('/api/problems/add', formData);
+    $.ajax({
+        type: "POST",
+        url: "/api/problems/add",
+        data: formData,
+        success: function()
+        {
+            window.location = "/problems/"
+        }
+    })
 });
 
 var dataObj;
@@ -122,25 +138,25 @@ var projectsObj;
 var problemsObj;
 $.get('/api/problems', function(data){
  problemsObj = data;
- console.log(data);
+
  $.each(problemsObj, function(i, d){
- 	console.log(d);
- 	$(".add_form #problems").append("<option value='"+d.problem_id+"'>"+d.name+"</option>")
+
+ 	$(".add_form #problem").append("<option value='"+d.problem_id+"'>"+d.name+"</option>")
  });
 });
 $.get('/api/projects', function(data){
  projectsObj = data;
- console.log(data);
+
  $.each(projectsObj, function(i, d){
- 	console.log(d);
- 	$(".add_form #projects").append("<option value='"+d.project_id+"'>"+d.name+"</option>")
+
+ 	$(".add_form #project").append("<option value='"+d.project_id+"'>"+d.name+"</option>")
  });
 });
 $.get('/api/datasets', function(data){
  dataObj = data;
- console.log(data);
+
  $.each(dataObj, function(i, d){
- 	console.log(d);
- 	$(".add_form #dataset").append("<option value='"+d.datasets_id+"'>"+d.name+"</option>")
+
+ 	$(".add_form #dataset").append("<option value='"+d.dataset_id+"'>"+d.name+"</option>")
  });
 });

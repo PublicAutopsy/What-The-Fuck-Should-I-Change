@@ -45,9 +45,7 @@
                 <ul></ul>
             </div>
 
-            <select id="problems" placeholder="Select A Problem">
-                
-                
+            <select id="problem" placeholder="Select A Problem">
             </select>
 
             <a class="submit_btn" id="data_submit_btn" >DONE </a>
@@ -91,7 +89,7 @@
                 <ul></ul>
             </div>
 
-            <select id="problems" placeholder="Select A Problem">
+            <select id="problem" placeholder="Select A Problem">
             </select>
   
             <a class="submit_btn" id="project_submit_btn" >DONE </a>

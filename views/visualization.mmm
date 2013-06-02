@@ -88,7 +88,16 @@ function update() {
 
 // Color leaf nodes orange, and packages white or blue.
 function color(d) {
-  return d._children ? "gray" : d.children ? "gray" : "darkgrey";
+{{#dataList}}
+  console.log(d);
+  return d._children ? "#4285f4" : d.children ? "#4285f4" : "gray";
+{{/dataList}}
+{{#projectList}}
+  return d._children ? "#0f9d58" : d.children ? "#0f9d58" : "gray";
+{{/projectList}}
+{{#problemList}}
+  return d._children ? "#db4437" : d.children ? "#db4437" : "gray";
+{{/problemList}}
 }
 
 // Toggle children on click.

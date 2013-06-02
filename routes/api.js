@@ -41,11 +41,6 @@ exports.meow = function(req, res){
     });
 };
 
-
-exports.datasetsAdd = function (req, res) {
-    res.render('add_view', { title: 'Add a Dataset', data : true });
-};
-
 exports.datasetSingle = function(req, res){
     var dataset = req.params.dataset;
     async.series([
@@ -379,7 +374,10 @@ exports.problemAdd = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.send(results);
+            res.writeHead(302, {
+                'Location': '/problems/'
+            });
+            res.end();
         });
 };
 
@@ -455,7 +453,8 @@ exports.datasetsAdd = function (req, res) {
     ],
         // optional callback
         function(err, results){
-            res.send(results);
+            res.send(200, {'meow': 'kjdnjknsdfg'});
+            //res.end();
         });
 };
 
@@ -549,9 +548,11 @@ exports.projectAdd = function (req, res) {
         }
 
     ],
-        // optional callback
         function(err, results){
-            res.send(results);
+            res.writeHead(302, {
+                'Location': '/projects/'
+                //add other headers here...
+            });
         });
 };
 
