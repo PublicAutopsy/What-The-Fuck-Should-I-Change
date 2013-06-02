@@ -8,9 +8,9 @@
         <section id="form_selection">
         <h1>What Do You Want To Share?</h1>
         <div class="shareBtns">
-            <a href="#" id="data_form_btn"></a>
-            <a href="#" id="project_form_btn"></a>
-            <a href="#" id="problem_form_btn"></a>
+            <a href="#" id="data_form_btn"> <span class="data">Data</span></a>
+            <a href="#" id="project_form_btn"><span class="data">Project</span></a>
+            <a href="#" id="problem_form_btn"><span class="data">Problem</span></a>
         </div>
         </section>
 

@@ -1,6 +1,12 @@
 
  <div id="chart"></div>
     <script type="text/javascript">
+    $.getJSON('/api/meow/',
+        function(data)
+        {
+              root = data;
+              update();
+        });
 
 var w = $(window).width()-60,
     h = $(window).height(),
@@ -15,11 +21,6 @@ var force = d3.layout.force()
 var vis = d3.select("#chart").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
-
-d3.json("/api/datasets", function(json) {
-  root = json.dv;
-  update();
-});
 
 function update() {
   var nodes = flatten(root),
