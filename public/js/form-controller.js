@@ -19,7 +19,7 @@
  });
 
 
-$("#data_form #problems").change(function(e){
+$("#data_form #problem").change(function(e){
 	var selectionVal = $(e.target).val();
 	var selectionText = $("#data_form #"+$(e.target).attr("id")+" option[value='"+$(e.target).val()+"']").text();
 	console.log("#data_form #"+$(e.target).attr("id")+" option[value='"+$(e.target).val()+"']");

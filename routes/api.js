@@ -314,7 +314,7 @@ exports.problemAdd = function (req, res) {
     async.series([
         function(callback){
             var dsAddQuery = "INSERT INTO problems ( contributer_id, description, location, name, url ) ";
-            dsAddQuery += "VALUES ('" + problem.contributer_id + "','" + problem.description + "','" + problem.location + "','" + problem.name + "','" + problem.url + "')";
+            dsAddQuery += "VALUES (" + connection.escape(problem.contributer_id) + "," + connection.escape(problem.description) + "," + connection.escape(problem.location) + "," + connection.escape(problem.name) + "," + connection.escape(problem.url) + ")";
             dsAddQuery = dsAddQuery.replace("'null'", "NULL");
             connection.query(dsAddQuery, function(err, result) {
                 if( err )
@@ -331,12 +331,12 @@ exports.problemAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("SELECT creator_id FROM creators WHERE name = '" + problem.creator + "'", function(err, rows, fields) {
+            connection.query("SELECT creator_id FROM creators WHERE name = " + connection.escape(problem.creator), function(err, rows, fields) {
                 if( err ) console.log("error: " + err);
 
                 if( rows.length < 1 )
                 {
-                    connection.query("INSERT INTO creators (name) VALUE ('" + problem.creator + "')", function(err, result) {
+                    connection.query("INSERT INTO creators (name) VALUE (" + connection.escape(problem.creator) + ")", function(err, result) {
                         if( err ) console.log("error: " + err);
 
                         creator_id = result.insertId;
@@ -351,7 +351,7 @@ exports.problemAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("UPDATE problems SET creator_id = " + creator_id, function(err, result) {
+            connection.query("UPDATE problems SET creator_id = " + connection.escape(creator_id) + " WHERE problem_id = " + connection.escape(problem_id), function(err, result) {
                 if( err ) console.log("error: " + err);
 
                 callback(null, null);
@@ -368,7 +368,7 @@ exports.problemAdd = function (req, res) {
 
             for(var i = 0; i < problem.datasets.length; i++ )
             {
-                insertQuery += "(" + problem_id + "," + problem.datasets[i].dataset_id + ")";
+                insertQuery += "(" + connection.escape(problem_id) + "," + connection.escape(problem.datasets[i].dataset_id) + ")";
                 if( i < problem.datasets.length - 1 ) insertQuery += ",";
             }
             connection.query(insertQuery, function(err, result) {
@@ -391,8 +391,9 @@ exports.datasetsAdd = function (req, res) {
     async.series([
         function(callback){
             var dsAddQuery = "INSERT INTO datasets (contributer_id, description, location, name, url) ";
-            dsAddQuery += "VALUES ('" + dataset.contributer_id + "','" + dataset.description + "','" + dataset.location + "','" + dataset.name + "','" + dataset.url + "')";
+            dsAddQuery += "VALUES (" + connection.escape(dataset.contributer_id) + "," + connection.escape(dataset.description) + "," + connection.escape(dataset.location) + "," + connection.escape(dataset.name) + "," + connection.escape(dataset.url) + ")";
             dsAddQuery = dsAddQuery.replace("'null'", "NULL");
+
             connection.query(dsAddQuery, function(err, result) {
                 if( err ) console.log("error: " + err);
 
@@ -401,12 +402,12 @@ exports.datasetsAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("SELECT creator_id FROM creators WHERE name = '" + dataset.creator + "'", function(err, rows, fields) {
+            connection.query("SELECT creator_id FROM creators WHERE name = " + connection.escape(dataset.creator), function(err, rows, fields) {
                 if( err ) console.log("error: " + err);
 
                 if( rows.length < 1 )
                 {
-                    connection.query("INSERT INTO creators (name) VALUE ('" + dataset.creator + "')", function(err, result) {
+                    connection.query("INSERT INTO creators (name) VALUE (" + connection.escape(dataset.creator) + ")", function(err, result) {
                         if( err ) console.log("error: " + err);
 
                         creator_id = result.insertId;
@@ -421,7 +422,7 @@ exports.datasetsAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("UPDATE datasets SET creator_id = " + creator_id + " WHERE dataset_id = " + dataset_id, function(err, result) {
+            connection.query("UPDATE datasets SET creator_id = " + connection.escape(creator_id) + " WHERE dataset_id = " + connection.escape(dataset_id), function(err, result) {
                 if( err ) console.log("error: " + err);
 
                 callback(null, null);
@@ -436,7 +437,7 @@ exports.datasetsAdd = function (req, res) {
             var insertQuery = "INSERT INTO problems_to_datasets (problem_id, dataset_id) VALUES ";
             for(var i = 0; i < dataset.problems.length; i++ )
             {
-                insertQuery += "(" + dataset.problems[i].problem_id + "," + dataset_id + ")";
+                insertQuery += "(" + connection.escape(dataset.problems[i].problem_id) + "," + connection.escape(dataset_id) + ")";
                 if( i < dataset.problems.length - 1 ) insertQuery += ",";
             }
             connection.query(insertQuery, function(err, result) {
@@ -449,7 +450,7 @@ exports.datasetsAdd = function (req, res) {
             var insertQuery = "INSERT INTO datasets_to_api_types (dataset_id, api_type_id) VALUES ";
             for(var i = 0; i < dataset.api_types.length; i++ )
             {
-                insertQuery += "(" + dataset_id + "," + dataset.api_types[i].api_type_id + ")";
+                insertQuery += "(" + dataset_id + "," + connection.escape(dataset.api_types[i].api_type_id) + ")";
                 if( i < dataset.api_types.length - 1 ) insertQuery += ",";
             }
             connection.query(insertQuery, function(err, result) {
@@ -477,8 +478,8 @@ exports.upvote = function(req, res){
     var type = connecter[req.params.type];
     var id = req.params.id;
 
-    console.log("UPDATE " + type + " SET votes = votes + 1 WHERE '" + type.substr(0, type.length-1) + "_id' = " + id);
-    connection.query("UPDATE " + type + " SET votes = votes + 1 WHERE " + type.substr(0, type.length-2) + "_id = " + id, function(err, result) {
+    console.log("UPDATE " + connection.escape(type) + " SET votes = votes + 1 WHERE " + connection.escape(type.substr(0, type.length-1)) + "_id = " + connection.escape(id));
+    connection.query("UPDATE " + connection.escape(type) + " SET votes = votes + 1 WHERE " + connection.escape(type.substr(0, type.length-2)) + "_id = " + connection.escape(id), function(err, result) {
         if( err ) console.log("error: " + err);
 
         res.send({'result': 1});
@@ -492,7 +493,7 @@ exports.projectAdd = function (req, res) {
     async.series([
         function(callback){
             var dsAddQuery = "INSERT INTO projects (contributer_id, creator_id, description, iframe_url, location, name, repository_url) ";
-            dsAddQuery += "VALUE ('" + project.contributer_id + "', '" + project.creator_id + "', '" + project.description + "', '" + project.iframe_url + "', '" + project.location + "', '" + project.name + "', '" + project.repository_url + "')";
+            dsAddQuery += "VALUE (" + connection.escape(project.contributer_id) + ", " + connection.escape(project.creator_id) + ", " + connection.escape(project.description) + ", " + connection.escape(project.iframe_url) + ", " + connection.escape(project.location) + ", " + connection.escape(project.name) + ", " + connection.escape(project.repository_url) + ")";
             dsAddQuery = dsAddQuery.replace("'null'", "NULL");
             connection.query(dsAddQuery, function(err, result) {
                 if( err ) console.log("error: " + err);
@@ -502,12 +503,12 @@ exports.projectAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("SELECT creator_id FROM creators WHERE name = '" + project.creator + "'", function(err, rows, fields) {
+            connection.query("SELECT creator_id FROM creators WHERE name = " + connection.escape(project.creator), function(err, rows, fields) {
                 if( err ) console.log("error: " + err);
 
                 if( rows.length < 1 )
                 {
-                    connection.query("INSERT INTO creators (name) VALUE ('" + project.creator + "')", function(err, result) {
+                    connection.query("INSERT INTO creators (name) VALUE (" + connection.escape(project.creator) + ")", function(err, result) {
                         if( err ) console.log("error: " + err);
 
                         creator_id = result.insertId;
@@ -522,7 +523,7 @@ exports.projectAdd = function (req, res) {
             })
         },
         function(callback){
-            connection.query("UPDATE projects SET creator_id = " + creator_id + " WHERE project_id = " + project_id, function(err, result) {
+            connection.query("UPDATE projects SET creator_id = " + connection.escape(creator_id) + " WHERE project_id = " + connection.escape(project_id), function(err, result) {
                 if( err ) console.log("error: " + err);
 
                 callback(null, null);
@@ -538,7 +539,7 @@ exports.projectAdd = function (req, res) {
             }
             for(var i = 0; i < project.problems.length; i++ )
             {
-                insertQuery += "(" + project.problems[i].problem_id + "," + project_id + ")";
+                insertQuery += "(" + connection.escape(project.problems[i].problem_id) + "," + connection.escape(project_id) + ")";
                 if( i < project.problems.length - 1 ) insertQuery += ",";
             }
             connection.query(insertQuery, function(err, result) {
@@ -557,7 +558,7 @@ exports.projectAdd = function (req, res) {
             }
             for(var i = 0; i < project.datasets.length; i++ )
             {
-                insertQuery += "(" + project.datasets[i].dataset_id + "," + project_id + ")";
+                insertQuery += "(" + connection.escape(project.datasets[i].dataset_id) + "," + connection.escape(project_id) + ")";
                 if( i < project.datasets.length - 1 ) insertQuery += ",";
             }
             connection.query(insertQuery, function(err, result) {
