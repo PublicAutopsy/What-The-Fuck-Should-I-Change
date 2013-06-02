@@ -50,7 +50,7 @@ a {
       #header #header_wrapper #logo_container #logo {
         width: 26px;
         height: 87px;
-        margin: 20px auto;
+        margin: 15px auto 20px auto;
         display: block; }
     #header #header_wrapper #menu_container {
       width: 100%;
@@ -186,12 +186,13 @@ a {
   #info_window .close_btn {
     position: absolute;
     left: -31px;
-    top: 0;
+    top: 19px;
     z-index: 1000;
     width: 30px;
     height: 42px;
     background: rgba(255, 255, 255, 0.9);
-    display: block; }
+    display: block;
+    border: 1px solid #e5e5e5; }
   #info_window .filter_box {
     height: 60px;
     width: 100%;
@@ -252,7 +253,7 @@ a {
         text-shadow: 1px 2px 4px #777;
         filter: dropshadow(color=#555555, offx=1, offy=2); }
         #content .page#first .splash #name {
-          font-size: 210px; }
+          font-size: 180px; }
     #content .page#second {
       background: url("/images/rand/1.jpg"); }
     #content .page#third {
@@ -310,7 +311,7 @@ a {
     #search_box #input input {
       width: 100%;
       height: 80px;
-      padding-left: 60px;
+      padding-left: 80px;
       background: transparent;
       border: 0px;
       font-style: italic;
@@ -320,7 +321,7 @@ a {
     #search_box #input label {
       display: block;
       margin-top: 20px;
-      padding-left: 60px;
+      padding-left: 80px;
       font-size: 12px;
       font-weight: 500; }
 

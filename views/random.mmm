@@ -3,9 +3,9 @@
 {{>header}}
 
 
-	<section id="body">
+	<section id="content">
 
-		Uber duper random
+    Why not try solving {{#problem}} <a href="/problems/{{problem_id}}">{{name}}</a>{{/problem}} with the {{#data}}<a href="/data/{{dataset_id}}">{{name}}</a>{{/data}}?
 
 	</section>	
 	

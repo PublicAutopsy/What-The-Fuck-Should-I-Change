@@ -83,7 +83,7 @@
         </div>
 
     {{/projectList}}
-		<a href='#' class="close_btn">close</a>
+		<a href='#' class="close_btn">  </a>
 
 
 	</div>
