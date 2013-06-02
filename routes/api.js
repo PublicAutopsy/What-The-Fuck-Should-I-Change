@@ -44,7 +44,7 @@ exports.datasetSingle = function(req, res){
 
 
 //Projects start
-exports.project = function (req, res) {
+exports.projects = function (req, res) {
     async.series([
         function(callback){
             getProjects(callback);
@@ -76,7 +76,7 @@ exports.projectSingle = function (req, res) {
 
 
 //problem start
-exports.problem = function (req, res) {
+exports.problems = function (req, res) {
     async.series([
         function(callback){
             getProblems(callback);
