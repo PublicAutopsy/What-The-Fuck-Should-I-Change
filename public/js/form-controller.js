@@ -134,7 +134,7 @@ $.get('/api/projects', function(data){
 
  $.each(projectsObj, function(i, d){
 
- 	$(".add_form #projects").append("<option value='"+d.project_id+"'>"+d.name+"</option>")
+ 	$(".add_form #project").append("<option value='"+d.project_id+"'>"+d.name+"</option>")
  });
 });
 $.get('/api/datasets', function(data){
