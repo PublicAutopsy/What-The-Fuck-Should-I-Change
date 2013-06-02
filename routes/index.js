@@ -29,7 +29,7 @@ exports.datasets = function(req, res){
     res.render('list_view', { title: 'Datasets' });
 };
 exports.datasetsAdd = function(req, res){
-    res.render('index', { title: 'Add a Datasets' });
+    res.render('add_view', { title: 'Add a Datasets' });
 };
 exports.datasetSingle = function(req, res){
     var dataset = req.params.dataset;
@@ -46,7 +46,7 @@ exports.project = function(req, res){
 
 };
 exports.projectAdd = function(req, res){
-    res.render('index', { title: 'Add a Projects' });
+    res.render('add_view', { title: 'Add a Projects' });
 };
 exports.projectSingle = function(req, res){
     var project = req.params.project;
@@ -61,7 +61,7 @@ exports.problem = function(req, res){
     res.render('list_view', { title: 'Problems' });
 };
 exports.problemAdd = function(req, res){
-    res.render('index', { title: 'Add a Problem' });
+    res.render('add_view', { title: 'Add a Problem' });
 
 };
 exports.problemSingle = function(req, res){

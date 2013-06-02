@@ -1,0 +1,18 @@
+<article class="list_item" >
+	<div class="container" >
+		
+		<div class="title"><a href="/projects/14566">Title</a></div>
+		<div class="contributor">Contributor</div>
+		<div class="creator">Creator</div>
+		<div class="description">Description</div>
+		<div class="created_date">Created Date</div>
+		<div class="category">Category</div>
+		<div class="votes"> <a href="#">Vote</a> | Vote Count</div>
+
+		<!-- START only visible for datasets -->
+		<div class="data_type">Dataset Type</div>
+		<!-- END only visible for datasets -->
+
+
+	</div>
+</article>
